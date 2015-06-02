@@ -96,51 +96,101 @@
 # bedtools coverage -d -abam sam_miseq/S48_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq/S48.tsv
 
 
-bedtools coverage -d -abam sam_basespace/S01_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S01.tsv
-bedtools coverage -d -abam sam_basespace/S02_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S02.tsv
-bedtools coverage -d -abam sam_basespace/S03_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S03.tsv
-bedtools coverage -d -abam sam_basespace/S04_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S04.tsv
-bedtools coverage -d -abam sam_basespace/S05_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S05.tsv
-bedtools coverage -d -abam sam_basespace/S06_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S06.tsv
-bedtools coverage -d -abam sam_basespace/S07_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S07.tsv
-bedtools coverage -d -abam sam_basespace/S08_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S08.tsv
-bedtools coverage -d -abam sam_basespace/S09_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S09.tsv
-bedtools coverage -d -abam sam_basespace/S10_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S10.tsv
-bedtools coverage -d -abam sam_basespace/S11_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S11.tsv
-bedtools coverage -d -abam sam_basespace/S12_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S12.tsv
-bedtools coverage -d -abam sam_basespace/S13_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S13.tsv
-bedtools coverage -d -abam sam_basespace/S14_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S14.tsv
-bedtools coverage -d -abam sam_basespace/S15_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S15.tsv
-bedtools coverage -d -abam sam_basespace/S16_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S16.tsv
-bedtools coverage -d -abam sam_basespace/S17_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S17.tsv
-bedtools coverage -d -abam sam_basespace/S18_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S18.tsv
-bedtools coverage -d -abam sam_basespace/S19_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S19.tsv
-bedtools coverage -d -abam sam_basespace/S20_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S20.tsv
-bedtools coverage -d -abam sam_basespace/S21_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S21.tsv
-bedtools coverage -d -abam sam_basespace/S22_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S22.tsv
-bedtools coverage -d -abam sam_basespace/S23_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S23.tsv
-bedtools coverage -d -abam sam_basespace/S24_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S24.tsv
-bedtools coverage -d -abam sam_basespace/S25_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S25.tsv
-bedtools coverage -d -abam sam_basespace/S26_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S26.tsv
-bedtools coverage -d -abam sam_basespace/S27_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S27.tsv
-bedtools coverage -d -abam sam_basespace/S28_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S28.tsv
-bedtools coverage -d -abam sam_basespace/S29_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S29.tsv
-bedtools coverage -d -abam sam_basespace/S30_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S30.tsv
-bedtools coverage -d -abam sam_basespace/S31_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S31.tsv
-bedtools coverage -d -abam sam_basespace/S32_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S32.tsv
-bedtools coverage -d -abam sam_basespace/S33_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S33.tsv
-bedtools coverage -d -abam sam_basespace/S34_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S34.tsv
-bedtools coverage -d -abam sam_basespace/S35_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S35.tsv
-bedtools coverage -d -abam sam_basespace/S36_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S36.tsv
-bedtools coverage -d -abam sam_basespace/S37_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S37.tsv
-bedtools coverage -d -abam sam_basespace/S38_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S38.tsv
-bedtools coverage -d -abam sam_basespace/S39_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S39.tsv
-bedtools coverage -d -abam sam_basespace/S40_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S40.tsv
-bedtools coverage -d -abam sam_basespace/S41_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S41.tsv
-bedtools coverage -d -abam sam_basespace/S42_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S42.tsv
-bedtools coverage -d -abam sam_basespace/S43_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S43.tsv
-bedtools coverage -d -abam sam_basespace/S44_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S44.tsv
-bedtools coverage -d -abam sam_basespace/S45_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S45.tsv
-bedtools coverage -d -abam sam_basespace/S46_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S46.tsv
-bedtools coverage -d -abam sam_basespace/S47_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S47.tsv
-bedtools coverage -d -abam sam_basespace/S48_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S48.tsv
+# bedtools coverage -d -abam sam_basespace/S01_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S01.tsv
+# bedtools coverage -d -abam sam_basespace/S02_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S02.tsv
+# bedtools coverage -d -abam sam_basespace/S03_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S03.tsv
+# bedtools coverage -d -abam sam_basespace/S04_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S04.tsv
+# bedtools coverage -d -abam sam_basespace/S05_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S05.tsv
+# bedtools coverage -d -abam sam_basespace/S06_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S06.tsv
+# bedtools coverage -d -abam sam_basespace/S07_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S07.tsv
+# bedtools coverage -d -abam sam_basespace/S08_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S08.tsv
+# bedtools coverage -d -abam sam_basespace/S09_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S09.tsv
+# bedtools coverage -d -abam sam_basespace/S10_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S10.tsv
+# bedtools coverage -d -abam sam_basespace/S11_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S11.tsv
+# bedtools coverage -d -abam sam_basespace/S12_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S12.tsv
+# bedtools coverage -d -abam sam_basespace/S13_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S13.tsv
+# bedtools coverage -d -abam sam_basespace/S14_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S14.tsv
+# bedtools coverage -d -abam sam_basespace/S15_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S15.tsv
+# bedtools coverage -d -abam sam_basespace/S16_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S16.tsv
+# bedtools coverage -d -abam sam_basespace/S17_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S17.tsv
+# bedtools coverage -d -abam sam_basespace/S18_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S18.tsv
+# bedtools coverage -d -abam sam_basespace/S19_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S19.tsv
+# bedtools coverage -d -abam sam_basespace/S20_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S20.tsv
+# bedtools coverage -d -abam sam_basespace/S21_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S21.tsv
+# bedtools coverage -d -abam sam_basespace/S22_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S22.tsv
+# bedtools coverage -d -abam sam_basespace/S23_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S23.tsv
+# bedtools coverage -d -abam sam_basespace/S24_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S24.tsv
+# bedtools coverage -d -abam sam_basespace/S25_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S25.tsv
+# bedtools coverage -d -abam sam_basespace/S26_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S26.tsv
+# bedtools coverage -d -abam sam_basespace/S27_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S27.tsv
+# bedtools coverage -d -abam sam_basespace/S28_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S28.tsv
+# bedtools coverage -d -abam sam_basespace/S29_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S29.tsv
+# bedtools coverage -d -abam sam_basespace/S30_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S30.tsv
+# bedtools coverage -d -abam sam_basespace/S31_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S31.tsv
+# bedtools coverage -d -abam sam_basespace/S32_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S32.tsv
+# bedtools coverage -d -abam sam_basespace/S33_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S33.tsv
+# bedtools coverage -d -abam sam_basespace/S34_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S34.tsv
+# bedtools coverage -d -abam sam_basespace/S35_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S35.tsv
+# bedtools coverage -d -abam sam_basespace/S36_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S36.tsv
+# bedtools coverage -d -abam sam_basespace/S37_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S37.tsv
+# bedtools coverage -d -abam sam_basespace/S38_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S38.tsv
+# bedtools coverage -d -abam sam_basespace/S39_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S39.tsv
+# bedtools coverage -d -abam sam_basespace/S40_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S40.tsv
+# bedtools coverage -d -abam sam_basespace/S41_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S41.tsv
+# bedtools coverage -d -abam sam_basespace/S42_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S42.tsv
+# bedtools coverage -d -abam sam_basespace/S43_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S43.tsv
+# bedtools coverage -d -abam sam_basespace/S44_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S44.tsv
+# bedtools coverage -d -abam sam_basespace/S45_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S45.tsv
+# bedtools coverage -d -abam sam_basespace/S46_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S46.tsv
+# bedtools coverage -d -abam sam_basespace/S47_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S47.tsv
+# bedtools coverage -d -abam sam_basespace/S48_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_basespace/S48.tsv
+
+
+bedtools coverage -d -abam sam_miseq_hg19/S01_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S01.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S02_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S02.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S03_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S03.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S04_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S04.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S05_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S05.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S06_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S06.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S07_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S07.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S08_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S08.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S09_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S09.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S10_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S10.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S11_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S11.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S12_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S12.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S13_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S13.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S14_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S14.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S15_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S15.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S16_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S16.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S17_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S17.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S18_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S18.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S19_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S19.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S20_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S20.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S21_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S21.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S22_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S22.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S23_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S23.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S24_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S24.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S25_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S25.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S26_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S26.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S27_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S27.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S28_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S28.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S29_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S29.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S30_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S30.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S31_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S31.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S32_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S32.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S33_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S33.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S34_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S34.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S35_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S35.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S36_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S36.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S37_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S37.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S38_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S38.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S39_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S39.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S40_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S40.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S41_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S41.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S42_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S42.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S43_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S43.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S44_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S44.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S45_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S45.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S46_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S46.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S47_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S47.tsv
+bedtools coverage -d -abam sam_miseq_hg19/S48_dedup.bam -b targets/solo_genes.bed | awk '{print $4,$6}' > depth_miseq_hg19/S48.tsv
