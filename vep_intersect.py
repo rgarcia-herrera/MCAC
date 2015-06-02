@@ -18,21 +18,24 @@ for f in args.files:
         if not l[0].startswith('#'):
             (Uploaded_variation, Location, Allele, Gene, Feature, Feature_type, Consequence, cDNA_position, CDS_position, Protein_position, Amino_acids, Codons, Existing_variation, Extra) = l
             extraslist = Extra.split(';')
-            extras = {'SYMBOL': '-'}
+            extras = {'SYMBOL'  : '-',
+                      'SIFT'    : '-',
+                      'PolyPhen': '-',
+                      'PUBMED'  : '-'}
             for e in extraslist:
                 (k,v) = e.split('=')
                 extras[k] = v
 
             if f.name in variants:
-                variants[f.name].update([(Location, Gene, Existing_variation, Consequence, extras['SYMBOL'])])
+                variants[f.name].update([(Location, Gene, Existing_variation, Consequence, extras['SYMBOL'], extras['SIFT'], extras['PolyPhen'], extras['PUBMED'])])
             else:
-                variants[f.name] = set([(Location, Gene, Existing_variation, Consequence, extras['SYMBOL'])])
+                variants[f.name]  = set([(Location, Gene, Existing_variation, Consequence, extras['SYMBOL'], extras['SIFT'], extras['PolyPhen'], extras['PUBMED'])])
 
 
     
 candidates = set.intersection( *variants.values() )
 
-
+args.intersection.write("\t".join(['location', 'gene', 'existing_variation', 'consequence', 'SYMBOL', 'SIFT', 'PolyPhen', 'PUBMED'])+"\n" )
 for v in candidates:
     args.intersection.write("\t".join(v)+"\n")
                                                                         
