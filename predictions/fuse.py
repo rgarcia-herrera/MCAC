@@ -45,7 +45,6 @@ if args.type == 'provean':
               'provean_prediction_1': PREDICTION2_5,
               'provean_prediction_2': PREDICTION0_05,
               'sample'          : args.sample,
-              #'provean_rows'    : []
         }
 
         bulk.find( { 'chrom': chrom, 'pos': pos, 'ref': ref, 'alt': alt,
@@ -59,4 +58,53 @@ if args.type == 'provean':
     pprint(result)
     
 if args.type == 'vep':
-    pass
+    bulk = db.mcac.initialize_ordered_bulk_op()
+    vep_file = csv.reader(args.file, delimiter="\t")
+    for row in vep_file:
+        if row[0].startswith('#'):
+            continue
+        
+        (Uploaded_variation, Location, Allele,
+        Gene, Feature, Feature_type, Consequence,
+        cDNA_position, CDS_position, Protein_position,
+        Amino_acids, Codons, Existing_variation, Extra) = row
+        
+        
+        (chrom, pos, variation) = Uploaded_variation.split('_')
+        try:
+            (ref, alt) = variation.split('/')
+        except:
+            continue
+
+        # grab stuff from the extra field
+        protein_id = ''
+        polyphen   = ''
+        sift       = ''
+        for field in Extra.split(';'):
+            (key, value) = field.split('=')
+            if key == 'ENSP':
+                protein_id = value
+            if key == 'PolyPhen':
+                polyphen = value.split('(')[0]
+            if key == 'SIFT':
+                sift = value.split('(')[0]
+        
+        v = { 'chrom': chrom, 'pos': pos, 'ref': ref, 'alt': alt,
+              'protein_id'    : protein_id,
+              'gene_id'       : Gene,
+              'transcript_id' : Feature,
+              'sample'        : args.sample,
+              'polyphen'      : polyphen,
+              'sift'          : sift,
+              'consequence'   : Consequence
+              
+        }
+
+        bulk.find( { 'chrom': chrom, 'pos': pos, 'ref': ref, 'alt': alt,
+                     'protein_id'    : protein_id,
+                     'gene_id'       : Gene,
+                     'transcript_id' : Feature, }
+        ).upsert().update( {'$set': v, '$push': {'vep_rows': row}} )
+            
+    result = bulk.execute()
+    pprint(result)
