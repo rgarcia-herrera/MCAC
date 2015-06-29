@@ -26,6 +26,9 @@ for f in args.files:
                 (k,v) = e.split('=')
                 extras[k] = v
 
+            if not 'CLIN_SIG' in extras:
+                extras['CLIN_SIG'] = '-'
+                
             if f.name in variants:
                 variants[f.name].update([(Location, Gene, Existing_variation, Consequence,
                                           extras['SYMBOL'], extras['SIFT'], extras['PolyPhen'], extras['PUBMED'],
