@@ -27,15 +27,19 @@ for f in args.files:
                 extras[k] = v
 
             if f.name in variants:
-                variants[f.name].update([(Location, Gene, Existing_variation, Consequence, extras['SYMBOL'], extras['SIFT'], extras['PolyPhen'], extras['PUBMED'])])
+                variants[f.name].update([(Location, Gene, Existing_variation, Consequence,
+                                          extras['SYMBOL'], extras['SIFT'], extras['PolyPhen'], extras['PUBMED'],
+                                          extras['CLIN_SIG'], extras['IMPACT'])])
             else:
-                variants[f.name]  = set([(Location, Gene, Existing_variation, Consequence, extras['SYMBOL'], extras['SIFT'], extras['PolyPhen'], extras['PUBMED'])])
+                variants[f.name]  = set([(Location, Gene, Existing_variation, Consequence,
+                                          extras['SYMBOL'], extras['SIFT'], extras['PolyPhen'], extras['PUBMED'],
+                                          extras['CLIN_SIG'], extras['IMPACT'])])
 
 
     
 candidates = set.intersection( *variants.values() )
 
-args.intersection.write("\t".join(['location', 'gene', 'existing_variation', 'consequence', 'SYMBOL', 'SIFT', 'PolyPhen', 'PUBMED'])+"\n" )
+args.intersection.write("\t".join(['location', 'gene', 'existing_variation', 'consequence', 'SYMBOL', 'SIFT', 'PolyPhen', 'PUBMED','CLIN_SIG','IMPACT'])+"\n" )
 for v in candidates:
     args.intersection.write("\t".join(v)+"\n")
                                                                         
