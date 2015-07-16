@@ -2,11 +2,15 @@
 
 ## Myocardiopathies and Arhythmogenic Channelopathies
 
-<img src="pipeline.png">
+<img src="pipeline_trusty.png">
 
-Will align reads against [GRCh38](http://www.ncbi.nlm.nih.gov/news/12-23-2013-grch38-released/).
+"Mistery" files were created by misterious software installed on the
+MiSeq control computer.
 
-Downloaded reference and indexes from ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/
 
-Will annotate with dbSNP 142 ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606_b142_GRCh38/VCF/
+Will align reads against hg19, with BWA.
+
+Got bundle of dbsnp etc. from GATK.
+
+
 
