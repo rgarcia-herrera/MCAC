@@ -4,6 +4,7 @@ import matplotlib
 matplotlib.use('svg')
 import matplotlib.pyplot as plt
 import existing_variation_make_uniq as IDs
+from get_clinical_significances import get_clinical_significance
 
 from pprint import pprint
 
@@ -41,9 +42,13 @@ for ID in IDs.all_ids:
 
 with open('var_count_per_existing_variation_gt5.csv', 'wb') as csvfile:
     varwriter = csv.writer(csvfile, delimiter=',')
-    varwriter.writerow(['S'] + range(1,49) )
+    varwriter.writerow(['S','clinical_significance'] + range(1,49) )
     row = 0
     for ID in IDs.all_ids:
-        varwriter.writerow([ID] + rows[row] )
+        clinical_significance = '-'
+        if ID.startswith('rs'):
+            clinical_significance = get_clinical_significance(ID)
+            
+        varwriter.writerow([ID, clinical_significance] + rows[row] )
         row += 1
 
