@@ -58,14 +58,21 @@ for l in csvr:
                   'PUBMED'  : '-',
                   'CLIN_SIG': '-',
                   'GMAF'    : '-',
-                  'IMPACT'  : '-',}
+                  'IMPACT'  : '-',
+                  'Amino_acids' : '-',
+                  'Codons'  : '-',
+        }
         for e in extraslist:
             (k,v) = e.split('=')
             extras[k] = v
 
         if extras['PolyPhen'].startswith('p') or extras['SIFT'].startswith('del') or extras['IMPACT'] == 'HIGH' or extras['CLIN_SIG'].find('pathogenic') != -1:
             s = score(extras)
-            variants.append([s, extras['SIFT'], extras['PolyPhen'], extras['CLIN_SIG'], extras['IMPACT'], Location, Gene, Existing_variation, Consequence, extras['GMAF'], cDNA_position, CDS_position, Protein_position, extras['SYMBOL'], extras['PUBMED'],])
+            variants.append([s, extras['SIFT'], extras['PolyPhen'], extras['CLIN_SIG'], extras['IMPACT'],
+                             Location, Gene, Existing_variation, Consequence, extras['GMAF'], cDNA_position,
+                             CDS_position, Protein_position, extras['SYMBOL'], extras['PUBMED'],
+                             Amino_acids, Codons,
+                             ])
 
 
 args.output.write("\t".join(['score',
@@ -79,7 +86,7 @@ args.output.write("\t".join(['score',
                              'consequence', 'gmaf',
                              'cDNA_position', 'CDS_position', 'Protein_position',
                              'SYMBOL',
-                             'PUBMED', ])+"\n" )
+                             'PUBMED', 'amino_acids', 'codons'])+"\n" )
 for v in variants:
     args.output.write("\t".join(v)+"\n")
 
