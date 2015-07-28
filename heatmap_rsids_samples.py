@@ -14,9 +14,10 @@ directory = "/export/home/rgarcia/MCAC/vcf/intersections/filtered/"
 
 
 varcount = {}
+genes    = {}
 
 for ID in IDs.all_ids:
-    varcount[ID] = {}                
+    varcount[ID] = {}
     for sample in range(1, 49):
         archivo = directory + bwa_mask % sample
         with open(archivo, 'rb') as csvfile:
@@ -25,11 +26,15 @@ for ID in IDs.all_ids:
             for row in vepreader:
                 existing = row[7].split(',')
                 if ID in existing:
+                    genes[ID] = row[13]
                     if sample in varcount[ID]:
                         varcount[ID][sample] += 1
                     else:
                         varcount[ID][sample] = 1
     
+
+
+
 rows = []
 for ID in IDs.all_ids:
     cols = []
@@ -42,13 +47,13 @@ for ID in IDs.all_ids:
 
 with open('var_count_per_existing_variation_gt5.csv', 'wb') as csvfile:
     varwriter = csv.writer(csvfile, delimiter=',')
-    varwriter.writerow(['S','clinical_significance'] + range(1,49) )
+    varwriter.writerow(['ID', 'symbol', 'clinical_significance'] + range(1,49) )
     row = 0
     for ID in IDs.all_ids:
         clinical_significance = '-'
         if ID.startswith('rs'):
             clinical_significance = get_clinical_significance(ID)
             
-        varwriter.writerow([ID, clinical_significance] + rows[row] )
+        varwriter.writerow([ID, genes[ID], clinical_significance] + rows[row] )
         row += 1
 
