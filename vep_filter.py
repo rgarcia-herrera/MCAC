@@ -75,7 +75,7 @@ for l in csvr:
                              ])
 
 
-args.output.write("\t".join(['score',
+args.output.write(";".join(['score',
                              'SIFT',
                              'PolyPhen',
                              'CLIN_SIG',
@@ -88,7 +88,7 @@ args.output.write("\t".join(['score',
                              'SYMBOL',
                              'PUBMED', 'amino_acids', 'codons'])+"\n" )
 for v in variants:
-    args.output.write("\t".join(v)+"\n")
+    args.output.write(";".join(v)+"\n")
 
 
 
