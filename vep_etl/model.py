@@ -1,0 +1,368 @@
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, Float, Boolean, create_engine
+
+##################
+# DataBase Model #
+##################
+Base = declarative_base()
+
+
+
+class Three_prime_UTR_variant(Base):
+    __tablename__ = 'three_prime_UTR_variant'
+    id                 = Column(Integer, primary_key=True)
+    sample             = Column(String)
+    pipeline           = Column(String) 
+    variant_id         = Column(String)
+    chrom              = Column(String) # v['seq_region_name'],
+    start              = Column(Integer) 
+    end                = Column(Integer)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    ccds               = Column(String)
+    cdna_end           = Column(Integer)
+    cdna_start         = Column(Integer)
+    consequence_terms  = Column(String)
+    eas_maf            = Column(String)
+    exon               = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    protein_id         = Column(String)
+    sas_maf            = Column(String)
+    strand             = Column(Integer)
+    swissprot          = Column(String)
+    transcript_id      = Column(String)
+    trembl             = Column(String)
+    uniparc            = Column(String)
+    variant_allele     = Column(String)
+
+ 
+class NMD_transcript_variant(Base):
+    __tablename__ = 'consequences'
+    id                 = Column(Integer, primary_key=True)
+    sample             = Column(String)
+    pipeline           = Column(String) 
+    variant_id         = Column(String)
+    chrom              = Column(String) # v['seq_region_name'],
+    start              = Column(Integer) 
+    end                = Column(Integer)
+    amino_acids        = Column(String)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    cdna_end           = Column(Integer)
+    cdna_start         = Column(Integer)
+    cds_end            = Column(Integer)
+    cds_start          = Column(Integer)
+    codons             = Column(String)
+    consequence_terms  = Column(String)
+    domains            = Column(String)
+    eas_maf            = Column(String)
+    exon               = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    intron             = Column(String)
+    polyphen_prediction = Column(String)
+    polyphen_score     = Column(Float)
+    protein_end        = Column(Integer)
+    protein_id         = Column(String)
+    protein_start      = Column(Integer)
+    sas_maf            = Column(String)
+    sift_prediction    = Column(String)
+    sift_score         = Column(Float)
+    strand             = Column(Integer)
+    swissprot          = Column(String)
+    transcript_id      = Column(String)
+    trembl             = Column(String)
+    uniparc            = Column(String)
+    variant_allele     = Column(String)
+
+
+
+
+    
+class Downstream_gene_variant(Base):
+    __tablename__      = 'consequences'
+    id                 = Column(Integer, primary_key=True)
+    sample             = Column(String)
+    pipeline           = Column(String) 
+    variant_id         = Column(String)
+    chrom              = Column(String) # v['seq_region_name'],
+    start              = Column(Integer) 
+    end                = Column(Integer)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    ccds               = Column(String)
+    consequence_terms  = Column(String)
+    distance           = Column(Integer)
+    eas_maf            = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    protein_id         = Column(String)
+    sas_maf            = Column(String)
+    strand             = Column(Integer)
+    swissprot          = Column(String)
+    transcript_id      = Column(String)
+    trembl             = Column(String)
+    uniparc            = Column(String)
+    variant_allele     = Column(String)
+
+
+class Intron_variant(Base):
+    __tablename__ = 'consequences'
+    id                 = Column(Integer, primary_key=True)
+    sample             = Column(String)
+    pipeline           = Column(String) 
+    variant_id         = Column(String)
+    chrom              = Column(String) # v['seq_region_name'],
+    start              = Column(Integer) 
+    end                = Column(Integer)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    ccds               = Column(String)
+    consequence_terms  = Column(String)
+    eas_maf            = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    intron             = Column(String)
+    protein_id         = Column(String)
+    sas_maf            = Column(String)
+    strand             = Column(Integer)
+    swissprot          = Column(String)
+    transcript_id      = Column(String)
+    trembl             = Column(String)
+    uniparc            = Column(String)
+    variant_allele     = Column(String)
+
+
+
+    
+class Issense_variant(Base):
+    __tablename__ = 'consequences'
+    id                = Column(Integer, primary_key=True)
+    sample            = Column(String)
+    pipeline          = Column(String) 
+    variant_id        = Column(String)
+    chrom             = Column(String) # v['seq_region_name'],
+    start             = Column(Integer) 
+    end               = Column(Integer)
+    amino_acids        = Column(String)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    ccds               = Column(String)
+    cdna_end           = Column(Integer)
+    cdna_start         = Column(Integer)
+    cds_end            = Column(Integer)
+    cds_start          = Column(Integer)
+    codons             = Column(String)
+    consequence_terms  = Column(String)
+    domains            = Column(String)
+    eas_maf            = Column(String)
+    exon               = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    polyphen_prediction = Column(String)
+    polyphen_score     = Column(Float)
+    protein_end        = Column(Integer)
+    protein_id         = Column(String)
+    protein_start      = Column(Integer)
+    sas_maf            = Column(String)
+    sift_prediction    = Column(String)
+    sift_score         = Column(Float)
+    strand             = Column(Integer)
+    swissprot          = Column(String)
+    transcript_id      = Column(String)
+    trembl             = Column(String)
+    uniparc            = Column(String)
+    variant_allele     = Column(String)
+
+
+
+class Nonn_coding_transcript_exon_variant(Base)String:
+    __tablename__ = 'consequences'
+    id                = Column(Integer, primary_key=True)
+    sample            = Column(String)
+    pipeline          = Column(String) 
+    variant_id        = Column(String)
+    chrom             = Column(String) # v['seq_region_name'],
+    start             = Column(Integer) 
+    end               = Column(Integer)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    cdna_end           = Column(Integer)
+    cdna_start         = Column(Integer)
+    consequence_terms  = Column(String)
+    eas_maf            = Column(String)
+    exon               = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    sas_maf            = Column(String)
+    strand             = Column(Integer)
+    transcript_id      = Column(String)
+    variant_allele     = Column(String)
+
+    
+
+
+class Non_coding_transcript_variant(Base):
+    __tablename__ = 'consequences'
+    id                 = Column(Integer, primary_key=True)
+    sample             = Column(String)
+    pipeline           = Column(String) 
+    variant_id         = Column(String)
+    chrom              = Column(String) # v['seq_region_name'],
+    start              = Column(Integer) 
+    end                = Column(Integer)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    cdna_end           = Column(Integer)
+    cdna_start         = Column(Integer)
+    consequence_terms  = Column(String)
+    eas_maf            = Column(String)
+    exon               = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    intron             = Column(String)
+    sas_maf            = Column(String)
+    strand             = Column(Integer)
+    transcript_id      = Column(String)
+    variant_allele     = Column(String)
+
+
+    
+
+
+class Splice_region_variant(Base):
+    __tablename__ = 'consequences'
+    id                 = Column(Integer, primary_key=True)
+    sample             = Column(String)
+    pipeline           = Column(String) 
+    variant_id         = Column(String)
+    chrom              = Column(String) # v['seq_region_name'],
+    start              = Column(Integer) 
+    end                = Column(Integer)
+    amino_acids        = Column(String)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    ccds               = Column(String)
+    cdna_end           = Column(Integer)
+    cdna_start         = Column(Integer)
+    cds_end            = Column(Integer)
+    cds_start          = Column(Integer)
+    codons             = Column(String)
+    consequence_terms  = Column(String)
+    domains            = Column(String)
+    eas_maf            = Column(String)
+    exon               = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    intron             = Column(String)
+    polyphen_prediction = Column(String)
+    polyphen_score     = Column(Float)
+    protein_end        = Column(Integer)
+    protein_id         = Column(String)
+    protein_start      = Column(Integer)
+    sas_maf            = Column(String)
+    sift_prediction    = Column(String)
+    sift_score         = Column(Float)
+    strand             = Column(Integer)
+    swissprot          = Column(String)
+    transcript_id      = Column(String)
+    trembl             = Column(String)
+    uniparc            = Column(String)
+    variant_allele     = Column(String)
+
+
+
+class Synonymous_variant(Base):
+    __tablename__ = 'consequences'
+    id                 = Column(Integer, primary_key=True)
+    sample             = Column(String)
+    pipeline           = Column(String) 
+    variant_id         = Column(String)
+    chrom              = Column(String) # v['seq_region_name'],
+    start              = Column(Integer) 
+    end                = Column(Integer)
+    amino_acids        = Column(String)
+    biotype            = Column(String)
+    ccds               = Column(String)
+    cdna_end           = Column(Integer)
+    cdna_start         = Column(Integer)
+    cds_end            = Column(Integer)
+    cds_start          = Column(Integer)
+    codons             = Column(String)
+    consequence_terms  = Column(String)
+    domains            = Column(String)
+    eas_maf            = Column(String)
+    exon               = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    protein_end        = Column(Integer)
+    protein_id         = Column(String)
+    protein_start      = Column(Integer)
+    sas_maf            = Column(String)
+    strand             = Column(Integer)
+    swissprot          = Column(String)
+    transcript_id      = Column(String)
+    trembl             = Column(String)
+    uniparc            = Column(String)
+    variant_allele     = Column(String)
+
+
+
+    
+
+class Upstream_gene_variant(Base):
+    __tablename__ = 'consequences'
+    id                 = Column(Integer, primary_key=True)
+    sample             = Column(String)
+    pipeline           = Column(String) 
+    variant_id         = Column(String)
+    chrom              = Column(String) # v['seq_region_name'],
+    start              = Column(Integer) 
+    end                = Column(Integer)
+    biotype            = Column(String)
+    canonical          = Column(Boolean)
+    ccds               = Column(String)
+    consequence_terms  = Column(String)
+    distance           = Column(Integer)
+    eas_maf            = Column(String)
+    gene_id            = Column(String)
+    gene_symbol        = Column(String)
+    gene_symbol_source = Column(String)
+    hgnc_id            = Column(Integer)
+    impact             = Column(String)
+    protein_id         = Column(String)
+    sas_maf            = Column(String)
+    strand             = Column(Integer)
+    swissprot          = Column(String)
+    transcript_id      = Column(String)
+    trembl             = Column(String)
+    uniparc            = Column(String)
+    variant_allele     = Column(String)
