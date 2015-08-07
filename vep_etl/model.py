@@ -366,3 +366,324 @@ class Upstream_gene_variant(Base):
     trembl             = Column(String)
     uniparc            = Column(String)
     variant_allele     = Column(String)
+
+
+
+
+
+
+
+
+
+
+
+
+##############################
+# Void dictionaries for init #
+##############################
+void_Three_prime_UTR_variant = {
+    sample             :
+    pipeline           :
+    variant_id         :
+    chrom              :
+    start              :
+    end                :
+    biotype            :
+    canonical          :
+    ccds               :
+    cdna_end           :
+    cdna_start         :
+    consequence_terms  :
+    eas_maf            :
+    exon               :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    protein_id         :
+    sas_maf            :
+    strand             :
+    swissprot          :
+    transcript_id      :
+    trembl             :
+    uniparc            :
+    variant_allele     :
+}
+ 
+void_NMD_transcript_variant = {
+    sample             :
+    pipeline           :
+    variant_id         :
+    chrom              :
+    start              :
+    end                :
+    amino_acids        :
+    biotype            :
+    canonical          :
+    cdna_end           :
+    cdna_start         :
+    cds_end            :
+    cds_start          :
+    codons             :
+    consequence_terms  :
+    domains            :
+    eas_maf            :
+    exon               :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    intron             :
+    polyphen_prediction :
+    polyphen_score     :
+    protein_end        :
+    protein_id         :
+    protein_start      :
+    sas_maf            :
+    sift_prediction    :
+    sift_score         :
+    strand             :
+    swissprot          :
+    transcript_id      :
+    trembl             :
+    uniparc            :
+    variant_allele     :
+}
+
+
+
+void_Downstream_gene_variant = {
+    sample             :
+    pipeline           :
+    variant_id         :
+    chrom              :
+    start              :
+    end                :
+    biotype            :
+    canonical          :
+    ccds               :
+    consequence_terms  :
+    distance           :
+    eas_maf            :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    protein_id         :
+    sas_maf            :
+    strand             :
+    swissprot          :
+    transcript_id      :
+    trembl             :
+    uniparc            :
+    variant_allele     :
+        }
+
+void_Intron_variant = {
+    sample             :
+    pipeline           :
+    variant_id         :
+    chrom              :
+    start              :
+    end                :
+    biotype            :
+    canonical          :
+    ccds               :
+    consequence_terms  :
+    eas_maf            :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    intron             :
+    protein_id         :
+    sas_maf            :
+    strand             :
+    swissprot          :
+    transcript_id      :
+    trembl             :
+    uniparc            :
+    variant_allele     :
+}
+
+
+    
+void_Issense_variant = {
+    sample            :
+    pipeline          :
+    variant_id        :
+    chrom             :
+    start             :
+    end               :
+    amino_acids        :
+    biotype            :
+    canonical          :
+    ccds               :
+    cdna_end           :
+    cdna_start         :
+    cds_end            :
+    cds_start          :
+    codons             :
+    consequence_terms  :
+    domains            :
+    eas_maf            :
+    exon               :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    polyphen_prediction :
+    polyphen_score     :
+    protein_end        :
+    protein_id         :
+    protein_start      :
+    sas_maf            :
+    sift_prediction    :
+    sift_score         :
+    strand             :
+    swissprot          :
+    transcript_id      :
+    trembl             :
+    uniparc            :
+    variant_allele     :
+}
+
+void_Non_coding_transcript_exon_variant = {
+    sample            :
+    pipeline          :
+    variant_id        :
+    chrom             :
+    start             :
+    end               :
+    biotype            :
+    canonical          :
+    cdna_end           :
+    cdna_start         :
+    consequence_terms  :
+    eas_maf            :
+    exon               :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    sas_maf            :
+    strand             :
+    transcript_id      :
+    variant_allele     :
+}
+    
+
+
+void_Non_coding_transcript_variant = {
+    sample             :
+    pipeline           :
+    variant_id         :
+    chrom              :
+    start              :
+    end                :
+    biotype            :
+    canonical          :
+    cdna_end           :
+    cdna_start         :
+    consequence_terms  :
+    eas_maf            :
+    exon               :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    intron             :
+    sas_maf            :
+    strand             :
+    transcript_id      :
+    variant_allele     :
+}
+
+    
+
+
+void_Splice_region_variant = {
+    sample             :
+    pipeline           :
+    variant_id         :
+    chrom              :
+    start              :
+    end                :
+    amino_acids        :
+    biotype            :
+    canonical          :
+    ccds               :
+    cdna_end           :
+    cdna_start         :
+    cds_end            :
+    cds_start          :
+    codons             :
+    consequence_terms  :
+    domains            :
+    eas_maf            :
+    exon               :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    intron             :
+    polyphen_prediction :
+    polyphen_score     :
+    protein_end        :
+    protein_id         :
+    protein_start      :
+    sas_maf            :
+    sift_prediction    :
+    sift_score         :
+    strand             :
+    swissprot          :
+    transcript_id      :
+    trembl             :
+    uniparc            :
+    variant_allele     :
+}
+
+
+void_Synonymous_variant = {
+    sample             :
+    pipeline           :
+    variant_id         :
+    chrom              :
+    start              :
+    end                :
+    amino_acids        :
+    biotype            :
+    ccds               :
+    cdna_end           :
+    cdna_start         :
+    cds_end            :
+    cds_start          :
+    codons             :
+    consequence_terms  :
+    domains            :
+    eas_maf            :
+    exon               :
+    gene_id            :
+    gene_symbol        :
+    gene_symbol_source :
+    hgnc_id            :
+    impact             :
+    protein_end        :
+    protein_id         :
+    protein_start      :
+    sas_maf            :
+    strand             :
+    swissprot          :
+    transcript_id      :
+    trembl             :
+    uniparc            :
+    variant_allele     :
+}
