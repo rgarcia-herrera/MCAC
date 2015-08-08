@@ -1,53 +1,59 @@
-QUALIMAP=/home/rgarcia/downloads/qualimap_v2.0/qualimap
-BED=/mnt/f/rgarcia/canalopatias/targets/Miocardiopatias_y_canalopatias_Amplicons.bed
+#!/bin/bash
 
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/25_S25_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/25_S25_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/44_S44_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/44_S44_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/19_S19_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/19_S19_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/4_S4_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/4_S4_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/41_S41_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/41_S41_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/39_S39_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/39_S39_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/23_S23_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/23_S23_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/34_S34_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/34_S34_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/22_S22_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/22_S22_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/30_S30_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/30_S30_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/20_S20_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/20_S20_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/24_S24_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/24_S24_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/3_S3_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/3_S3_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/35_S35_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/35_S35_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/14_S14_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/14_S14_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/32_S32_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/32_S32_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/27_S27_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/27_S27_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/5_S5_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/5_S5_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/37_S37_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/37_S37_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/28_S28_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/28_S28_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/1_S1_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/1_S1_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/7_S7_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/7_S7_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/45_S45_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/45_S45_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/42_S42_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/42_S42_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/9_S9_L001_dedup_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/9_S9_L001_dedup
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/43_S43_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/43_S43_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/18_S18_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/18_S18_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/9_S9_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/9_S9_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/40_S40_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/40_S40_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/26_S26_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/26_S26_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/16_S16_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/16_S16_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/47_S47_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/47_S47_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/2_S2_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/2_S2_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/10_S10_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/10_S10_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/12_S12_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/12_S12_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/46_S46_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/46_S46_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/33_S33_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/33_S33_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/29_S29_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/29_S29_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/15_S15_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/15_S15_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/21_S21_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/21_S21_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/Undetermined_S0_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/Undetermined_S0_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/17_S17_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/17_S17_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/38_S38_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/38_S38_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/6_S6_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/6_S6_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/13_S13_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/13_S13_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/8_S8_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/8_S8_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/11_S11_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/11_S11_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/36_S36_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/36_S36_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/31_S31_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/31_S31_L001
-$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam /mnt/f/rgarcia/canalopatias/sam/48_S48_L001_dedup.bam -outdir  /mnt/f/rgarcia/canalopatias/qc/48_S48_L001
+QUALIMAP=/export/home/rgarcia/software/qualimap_v2.1/qualimap
+BASE=/state/partition1/home/rgarcia/MCAC
+BED=$BASE/targets/Miocardiopatias_y_canalopatias_Amplicons.bed
+
+BAMDIR=$BASE/sam_miseq_hg19
+QCDIR=$BASE/qc/qualimap
+mkdir -p $QCDIR
+
+
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S39.bam -outdir $QCDIR/S39
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S25.bam -outdir $QCDIR/S25
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S43.bam -outdir $QCDIR/S43
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S18.bam -outdir $QCDIR/S18
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S23.bam -outdir $QCDIR/S23
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S28.bam -outdir $QCDIR/S28
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S15.bam -outdir $QCDIR/S15
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S17.bam -outdir $QCDIR/S17
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S44.bam -outdir $QCDIR/S44
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S13.bam -outdir $QCDIR/S13
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S10.bam -outdir $QCDIR/S10
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S33.bam -outdir $QCDIR/S33
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S11.bam -outdir $QCDIR/S11
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S05.bam -outdir $QCDIR/S05
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S40.bam -outdir $QCDIR/S40
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S06.bam -outdir $QCDIR/S06
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S34.bam -outdir $QCDIR/S34
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S37.bam -outdir $QCDIR/S37
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S04.bam -outdir $QCDIR/S04
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S09.bam -outdir $QCDIR/S09
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S21.bam -outdir $QCDIR/S21
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S42.bam -outdir $QCDIR/S42
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S27.bam -outdir $QCDIR/S27
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S45.bam -outdir $QCDIR/S45
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S20.bam -outdir $QCDIR/S20
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S30.bam -outdir $QCDIR/S30
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S36.bam -outdir $QCDIR/S36
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S47.bam -outdir $QCDIR/S47
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S26.bam -outdir $QCDIR/S26
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S19.bam -outdir $QCDIR/S19
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S46.bam -outdir $QCDIR/S46
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S02.bam -outdir $QCDIR/S02
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S32.bam -outdir $QCDIR/S32
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S07.bam -outdir $QCDIR/S07
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S48.bam -outdir $QCDIR/S48
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S03.bam -outdir $QCDIR/S03
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S29.bam -outdir $QCDIR/S29
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S41.bam -outdir $QCDIR/S41
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S16.bam -outdir $QCDIR/S16
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S31.bam -outdir $QCDIR/S31
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S08.bam -outdir $QCDIR/S08
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S38.bam -outdir $QCDIR/S38
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S12.bam -outdir $QCDIR/S12
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S14.bam -outdir $QCDIR/S14
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S01.bam -outdir $QCDIR/S01
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S35.bam -outdir $QCDIR/S35
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S22.bam -outdir $QCDIR/S22
+$QUALIMAP bamqc --feature-file $BED -c -outformat HTML -bam $BAMDIR/S24.bam -outdir $QCDIR/S24
