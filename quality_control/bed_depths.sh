@@ -3,7 +3,7 @@
 BASE=/state/partition1/home/rgarcia/MCAC
 BED=$BASE/targets/solo_genes.bed
 
-BAMDIR=$BASE/sam_miseq_hg19
+BAMDIR=$BASE/sam/sam_miseq_hg19
 QCDIR=$BASE/qc/depth_miseq_hg19
 mkdir -p $QCDIR
 
