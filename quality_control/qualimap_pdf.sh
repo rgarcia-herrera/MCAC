@@ -1,53 +1,58 @@
-QUALIMAP=/home/rgarcia/downloads/qualimap_v2.0/qualimap
-BED=/mnt/f/rgarcia/canalopatias/targets/Miocardiopatias_y_canalopatias_Amplicons.bed
+#!/bin/bash
 
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/25_S25_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/25_S25_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/44_S44_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/44_S44_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/19_S19_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/19_S19_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/4_S4_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/4_S4_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/41_S41_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/41_S41_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/39_S39_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/39_S39_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/23_S23_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/23_S23_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/34_S34_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/34_S34_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/22_S22_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/22_S22_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/30_S30_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/30_S30_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/20_S20_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/20_S20_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/24_S24_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/24_S24_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/3_S3_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/3_S3_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/35_S35_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/35_S35_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/14_S14_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/14_S14_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/32_S32_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/32_S32_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/27_S27_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/27_S27_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/5_S5_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/5_S5_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/37_S37_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/37_S37_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/28_S28_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/28_S28_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/1_S1_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/1_S1_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/7_S7_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/7_S7_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/45_S45_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/45_S45_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/42_S42_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/42_S42_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/9_S9_L001_dedup_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/9_S9_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/43_S43_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/43_S43_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/18_S18_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/18_S18_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/9_S9_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/9_S9_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/40_S40_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/40_S40_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/26_S26_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/26_S26_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/16_S16_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/16_S16_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/47_S47_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/47_S47_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/2_S2_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/2_S2_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/10_S10_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/10_S10_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/12_S12_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/12_S12_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/46_S46_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/46_S46_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/33_S33_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/33_S33_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/29_S29_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/29_S29_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/15_S15_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/15_S15_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/21_S21_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/21_S21_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/Undetermined_S0_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/Undetermined_S0_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/17_S17_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/17_S17_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/38_S38_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/38_S38_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/6_S6_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/6_S6_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/13_S13_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/13_S13_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/8_S8_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/8_S8_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/11_S11_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/11_S11_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/36_S36_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/36_S36_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/31_S31_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/31_S31_L001.pdf
-$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam /mnt/f/rgarcia/canalopatias/sam/48_S48_L001_dedup.bam -outfile  /mnt/f/rgarcia/canalopatias/qc/48_S48_L001.pdf
+QUALIMAP=/export/home/rgarcia/software/qualimap_v2.1/qualimap
+BASE=/state/partition1/home/rgarcia/MCAC
+BED=$BASE/targets/Miocardiopatias_y_canalopatias_Amplicons.bed
+
+BAMDIR=$BASE/sam_miseq_hg19
+QCDIR=$BASE/qc/qualimap
+mkdir -p $QCDIR
+
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S39.bam -outfile $QCDIR/S39.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S25.bam -outfile $QCDIR/S25.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S43.bam -outfile $QCDIR/S43.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S18.bam -outfile $QCDIR/S18.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S23.bam -outfile $QCDIR/S23.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S28.bam -outfile $QCDIR/S28.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S15.bam -outfile $QCDIR/S15.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S17.bam -outfile $QCDIR/S17.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S44.bam -outfile $QCDIR/S44.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S13.bam -outfile $QCDIR/S13.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S10.bam -outfile $QCDIR/S10.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S33.bam -outfile $QCDIR/S33.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S11.bam -outfile $QCDIR/S11.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S05.bam -outfile $QCDIR/S05.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S40.bam -outfile $QCDIR/S40.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S06.bam -outfile $QCDIR/S06.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S34.bam -outfile $QCDIR/S34.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S37.bam -outfile $QCDIR/S37.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S04.bam -outfile $QCDIR/S04.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S09.bam -outfile $QCDIR/S09.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S21.bam -outfile $QCDIR/S21.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S42.bam -outfile $QCDIR/S42.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S27.bam -outfile $QCDIR/S27.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S45.bam -outfile $QCDIR/S45.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S20.bam -outfile $QCDIR/S20.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S30.bam -outfile $QCDIR/S30.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S36.bam -outfile $QCDIR/S36.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S47.bam -outfile $QCDIR/S47.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S26.bam -outfile $QCDIR/S26.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S19.bam -outfile $QCDIR/S19.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S46.bam -outfile $QCDIR/S46.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S02.bam -outfile $QCDIR/S02.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S32.bam -outfile $QCDIR/S32.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S07.bam -outfile $QCDIR/S07.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S48.bam -outfile $QCDIR/S48.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S03.bam -outfile $QCDIR/S03.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S29.bam -outfile $QCDIR/S29.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S41.bam -outfile $QCDIR/S41.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S16.bam -outfile $QCDIR/S16.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S31.bam -outfile $QCDIR/S31.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S08.bam -outfile $QCDIR/S08.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S38.bam -outfile $QCDIR/S38.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S12.bam -outfile $QCDIR/S12.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S14.bam -outfile $QCDIR/S14.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S01.bam -outfile $QCDIR/S01.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S35.bam -outfile $QCDIR/S35.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S22.bam -outfile $QCDIR/S22.pdf
+$QUALIMAP bamqc --feature-file $BED -c -outformat PDF -bam $BAMDIR/S24.bam -outfile $QCDIR/S24.pdf
