@@ -4,7 +4,7 @@ QUALIMAP=/export/home/rgarcia/software/qualimap_v2.1/qualimap
 BASE=/state/partition1/home/rgarcia/MCAC
 BED=$BASE/targets/Miocardiopatias_y_canalopatias_Amplicons.bed
 
-BAMDIR=$BASE/sam_miseq_hg19
+BAMDIR=$BASE/sam/sam_miseq_hg19
 QCDIR=$BASE/qc/qualimap
 mkdir -p $QCDIR
 
