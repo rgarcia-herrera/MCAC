@@ -8,6 +8,24 @@ Base = declarative_base()
 
 
 
+class Regulatory_feature_consequence(Base):
+    __tablename__ = 'regulatory_features' 
+    id                    = Column(Integer, primary_key=True)
+    sample                = Column(String)
+    pipeline              = Column(String) 
+    variant_id            = Column(String)
+    chrom                 = Column(String) # v['seq_region_name'],
+    start                 = Column(Integer) 
+    end                   = Column(Integer)
+    biotype               = Column(String)
+    impact                = Column(String)
+    regulatory_feature_id = Column(String)
+    variant_allele        = Column(String)    
+    sas_maf               = Column(String)
+    eas_maf               = Column(String)
+
+
+
 class Three_prime_UTR_variant(Base):
     __tablename__ = 'three_prime_UTR_variant'
     id                 = Column(Integer, primary_key=True)
