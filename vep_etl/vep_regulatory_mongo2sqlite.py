@@ -74,8 +74,34 @@ for v in veps.find( { '$or': [{ "transcript_consequences.polyphen_prediction" : 
                  'sas_maf'               : sas_maf,                 
                  'impact'                : rfc['impact'],
                  'variant_allele'        : rfc['variant_allele']}
-            
-            consequence = Regulatory_feature_consequence(**c)
-            session.add(consequence)
-            session.commit()
+
+            if 'colocated_variants' in v:
+                for cv in v['colocated_variants']:
+                    print 'aa_allele', cv.get('aa_allele')
+                    print 'aa_maf', cv.get('aa_maf')
+                    print 'afr_allele', cv.get('afr_allele')
+                    print 'afr_maf', cv.get('afr_maf')
+                    print 'allele_string', cv.get('allele_string')
+                    print 'amr_allele', cv.get('amr_allele')
+                    print 'amr_maf', cv.get('amr_maf')
+                    print 'clin_sig', cv.get('clin_sig')
+                    print 'ea_allele', cv.get('ea_allele')
+                    print 'ea_maf', cv.get('ea_maf')
+                    print 'EAS', cv.get('EAS')
+                    print 'end', cv.get('end')
+                    print 'eur_allele', cv.get('eur_allele')
+                    print 'eur_maf', cv.get('eur_maf')
+                    print 'id', cv.get('id')
+                    print 'minor_allele', cv.get('minor_allele')
+                    print 'minor_allele_freq', cv.get('minor_allele_freq')
+                    print 'pubmed', cv.get('pubmed')
+                    print 'SAS', cv.get('SAS')
+                    print 'somatic', cv.get('somatic')
+                    print 'start', cv.get('start')
+                    print 'strand', cv.get('strand')
+
+                        
+            #consequence = Regulatory_feature_consequence(**c)
+            #session.add(consequence)
+            #session.commit()
 

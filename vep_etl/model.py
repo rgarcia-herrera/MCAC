@@ -6,6 +6,40 @@ from sqlalchemy import Column, Integer, String, Float, Boolean, create_engine
 ##################
 Base = declarative_base()
 
+class Colocated_variant(Base):
+    __tablename__ = 'colocated_variants' 
+    id                    = Column(Integer, primary_key=True)
+    sample                = Column(String)
+    pipeline              = Column(String) 
+    variant_id            = Column(String)
+    chrom                 = Column(String) # v['seq_region_name'],
+    start                 = Column(Integer) 
+    end                   = Column(Integer)
+    biotype               = Column(String)
+    
+    aa_allele             = Column(String)
+    aa_maf                = Column(String)
+    afr_allele            = Column(String)
+    afr_maf               = Column(String)
+    allele_string         = Column(String)
+    amr_allele            = Column(String)
+    amr_maf               = Column(String)
+    clin_sig              = Column(String)
+    ea_allele             = Column(String)
+    ea_maf                = Column(String)
+    EAS                   = Column(String)
+    end                   = Column(String)
+    eur_allele            = Column(String)
+    eur_maf               = Column(String)
+    colocation_id         = Column(String)
+    minor_allele          = Column(String)
+    minor_allele_freq     = Column(String)
+    pubmed                = Column(String)
+    SAS                   = Column(String)
+    somatic               = Column(String)
+    start                 = Column(String)
+    strand                = Column(String)
+
 
 
 class Regulatory_feature_consequence(Base):
