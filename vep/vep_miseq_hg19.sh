@@ -1,4 +1,4 @@
-VEP=/export/home/rgarcia/software/ensembl-tools-release-79/scripts/variant_effect_predictor/variant_effect_predictor.pl
+VEP=/home/rgarcia/downloads/ensembl-tools-release-81/scripts/variant_effect_predictor/variant_effect_predictor.pl
 
 $VEP -i vcf/bwa_indelrealigned_fb/S01.vcf --json -o vcf/bwa_indelrealigned_fb/S01.vep.json --everything --fork 28 --offline --assembly GRCh37
 $VEP -i vcf/bwa_indelrealigned_fb/S02.vcf --json -o vcf/bwa_indelrealigned_fb/S02.vep.json --everything --fork 28 --offline --assembly GRCh37
