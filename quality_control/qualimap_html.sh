@@ -1,7 +1,7 @@
 #!/bin/bash
 
-QUALIMAP=/export/home/rgarcia/software/qualimap_v2.1/qualimap
-BASE=/state/partition1/home/rgarcia/MCAC
+QUALIMAP=/home/rgarcia/downloads/qualimap_v2.1.1/qualimap
+BASE=/home/rgarcia/MCAC
 BED=$BASE/targets/Miocardiopatias_y_canalopatias_Amplicons.bed
 
 BAMDIR=$BASE/sam/sam_miseq_hg19
