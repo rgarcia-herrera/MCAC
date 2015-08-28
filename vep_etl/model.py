@@ -1,13 +1,14 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Float, Boolean, create_engine
+from sqlalchemy import Column, Integer, String, Float, Boolean, create_engine, ForeignKey
+from sqlalchemy.orm import relationship, backref
 
 ##################
 # DataBase Model #
 ##################
 Base = declarative_base()
 
-class Colocated_variant(Base):
-    __tablename__ = 'colocated_variants' 
+class Variant(Base):
+    __tablename__ = 'variants' 
     id                    = Column(Integer, primary_key=True)
     sample                = Column(String)
     pipeline              = Column(String) 
@@ -15,8 +16,19 @@ class Colocated_variant(Base):
     chrom                 = Column(String) # v['seq_region_name'],
     start                 = Column(Integer) 
     end                   = Column(Integer)
-    biotype               = Column(String)
+    most_severe_consequence = Column(String)    
+
     
+class Colocated_variant(Base):
+    __tablename__ = 'colocated_variants' 
+    id                    = Column(Integer, primary_key=True)
+
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='colocated_variants')
+
     aa_allele             = Column(String)
     aa_maf                = Column(String)
     afr_allele            = Column(String)
@@ -28,7 +40,6 @@ class Colocated_variant(Base):
     ea_allele             = Column(String)
     ea_maf                = Column(String)
     EAS                   = Column(String)
-    end                   = Column(String)
     eur_allele            = Column(String)
     eur_maf               = Column(String)
     colocation_id         = Column(String)
@@ -38,6 +49,7 @@ class Colocated_variant(Base):
     SAS                   = Column(String)
     somatic               = Column(String)
     start                 = Column(String)
+    end                   = Column(String)
     strand                = Column(String)
 
 
@@ -45,13 +57,13 @@ class Colocated_variant(Base):
 class Regulatory_feature_consequence(Base):
     __tablename__ = 'regulatory_features' 
     id                    = Column(Integer, primary_key=True)
-    sample                = Column(String)
-    pipeline              = Column(String) 
-    variant_id            = Column(String)
-    chrom                 = Column(String) # v['seq_region_name'],
-    start                 = Column(Integer) 
-    end                   = Column(Integer)
-    biotype               = Column(String)
+
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='regulatory_features')
+
     impact                = Column(String)
     regulatory_feature_id = Column(String)
     variant_allele        = Column(String)    
@@ -63,13 +75,14 @@ class Regulatory_feature_consequence(Base):
 class Three_prime_UTR_variant(Base):
     __tablename__ = 'three_prime_UTR_variant'
     id                 = Column(Integer, primary_key=True)
-    sample             = Column(String)
-    pipeline           = Column(String) 
-    variant_id         = Column(String)
-    chrom              = Column(String) # v['seq_region_name'],
-    start              = Column(Integer) 
-    end                = Column(Integer)
-    biotype            = Column(String)
+
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='three_prime_UTR_variants')
+
+    biotype               = Column(String)    
     canonical          = Column(Boolean)
     ccds               = Column(String, nullable=True)
     cdna_end           = Column(Integer, nullable=True)
@@ -95,14 +108,15 @@ class Three_prime_UTR_variant(Base):
 class NMD_transcript_variant(Base):
     __tablename__ = 'nmd_transcript_variant'
     id                 = Column(Integer, primary_key=True)
-    sample             = Column(String)
-    pipeline           = Column(String) 
-    variant_id         = Column(String)
-    chrom              = Column(String) # v['seq_region_name'],
-    start              = Column(Integer) 
-    end                = Column(Integer)
+
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='nmd_transcript_variants')
+    
+    biotype               = Column(String)    
     amino_acids        = Column(String, nullable=True)
-    biotype            = Column(String, nullable=True)
     canonical          = Column(Boolean, nullable=True)
     cdna_end           = Column(Integer, nullable=True)
     cdna_start         = Column(Integer, nullable=True)
@@ -141,13 +155,14 @@ class NMD_transcript_variant(Base):
 class Downstream_gene_variant(Base):
     __tablename__      = 'downstream_gene_variant'
     id                 = Column(Integer, primary_key=True)
-    sample             = Column(String)
-    pipeline           = Column(String) 
-    variant_id         = Column(String)
-    chrom              = Column(String) # v['seq_region_name'],
-    start              = Column(Integer) 
-    end                = Column(Integer)
-    biotype            = Column(String)
+
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='downstream_gene_variants')
+
+    biotype               = Column(String)    
     canonical          = Column(Boolean)
     ccds               = Column(String, nullable=True)
     consequence_terms  = Column(String, nullable=True)
@@ -171,13 +186,14 @@ class Downstream_gene_variant(Base):
 class Intron_variant(Base):
     __tablename__ = 'intron_variant'
     id                 = Column(Integer, primary_key=True)
-    sample             = Column(String)
-    pipeline           = Column(String) 
-    variant_id         = Column(String)
-    chrom              = Column(String) # v['seq_region_name'],
-    start              = Column(Integer) 
-    end                = Column(Integer)
-    biotype            = Column(String)
+
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='intron_variants')
+
+    biotype               = Column(String)    
     canonical          = Column(Boolean)
     ccds               = Column(String, nullable=True)
     consequence_terms  = Column(String, nullable=True)
@@ -203,14 +219,13 @@ class Intron_variant(Base):
 class Missense_variant(Base):
     __tablename__     = 'missense_variant'
     id                = Column(Integer, primary_key=True)
-    sample            = Column(String)
-    pipeline          = Column(String) 
-    variant_id        = Column(String)
-    chrom             = Column(String) # v['seq_region_name'],
-    start             = Column(Integer) 
-    end               = Column(Integer)
-    amino_acids        = Column(String)
-    biotype            = Column(String)
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='missense_variants')
+
+    biotype               = Column(String)    
     canonical          = Column(Boolean)
     ccds               = Column(String, nullable=True)
     cdna_end           = Column(Integer, nullable=True)
@@ -247,13 +262,13 @@ class Missense_variant(Base):
 class Non_coding_transcript_exon_variant(Base):
     __tablename__ = 'non_coding_transcript_exon_variant'
     id                = Column(Integer, primary_key=True)
-    sample            = Column(String)
-    pipeline          = Column(String) 
-    variant_id        = Column(String)
-    chrom             = Column(String) # v['seq_region_name'],
-    start             = Column(Integer) 
-    end               = Column(Integer)
-    biotype            = Column(String)
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='non_coding_transcript_exon_variants')
+
+    biotype               = Column(String)    
     canonical          = Column(Boolean)
     cdna_end           = Column(Integer, nullable=True)
     cdna_start         = Column(Integer, nullable=True)
@@ -276,13 +291,14 @@ class Non_coding_transcript_exon_variant(Base):
 class Non_coding_transcript_variant(Base):
     __tablename__ = 'non_coding_transcript_variant'
     id                 = Column(Integer, primary_key=True)
-    sample             = Column(String)
-    pipeline           = Column(String) 
-    variant_id         = Column(String)
-    chrom              = Column(String) # v['seq_region_name'],
-    start              = Column(Integer) 
-    end                = Column(Integer)
-    biotype            = Column(String)
+
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='non_coding_transcript_variants')
+
+    biotype               = Column(String)        
     canonical          = Column(Boolean)
     cdna_end           = Column(Integer, nullable=True)
     cdna_start         = Column(Integer, nullable=True)
@@ -307,14 +323,15 @@ class Non_coding_transcript_variant(Base):
 class Splice_region_variant(Base):
     __tablename__ = 'splice_region_variant'
     id                 = Column(Integer, primary_key=True)
-    sample             = Column(String)
-    pipeline           = Column(String) 
-    variant_id         = Column(String)
-    chrom              = Column(String) # v['seq_region_name'],
-    start              = Column(Integer) 
-    end                = Column(Integer)
-    amino_acids        = Column(String, nullable=True)
-    biotype            = Column(String)
+
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='splice_region_variants')
+
+    biotype               = Column(String)    
+    amino_acids        = Column(String, nullable=True)    
     canonical          = Column(Boolean)
     ccds               = Column(String, nullable=True)
     cdna_end           = Column(Integer, nullable=True)
@@ -352,15 +369,15 @@ class Splice_region_variant(Base):
 class Synonymous_variant(Base):
     __tablename__ = 'synonymous_variant'
     id                 = Column(Integer, primary_key=True)
-    sample             = Column(String)
-    pipeline           = Column(String) 
-    variant_id         = Column(String)
-    chrom              = Column(String) # v['seq_region_name'],
-    start              = Column(Integer) 
-    end                = Column(Integer)
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='synonymous_variants')
+
+    biotype               = Column(String)    
     amino_acids        = Column(String, nullable=True)
     canonical          = Column(Boolean)    
-    biotype            = Column(String)
     ccds               = Column(String, nullable=True)
     cdna_end           = Column(Integer, nullable=True)
     cdna_start         = Column(Integer, nullable=True)
@@ -394,13 +411,13 @@ class Synonymous_variant(Base):
 class Upstream_gene_variant(Base):
     __tablename__ = 'upstream_gene_variant'
     id                 = Column(Integer, primary_key=True)
-    sample             = Column(String)
-    pipeline           = Column(String) 
-    variant_id         = Column(String)
-    chrom              = Column(String) # v['seq_region_name'],
-    start              = Column(Integer) 
-    end                = Column(Integer)
-    biotype            = Column(String)
+    variant_id = Column(Integer,
+                        ForeignKey('variants.id'))
+    variant    = relationship(Variant,
+                              primaryjoin=variant_id==Variant.id,
+                              backref='upstream_gene_variants')
+
+    biotype               = Column(String)        
     canonical          = Column(Boolean)
     ccds               = Column(String, nullable=True)
     consequence_terms  = Column(String, nullable=True)
