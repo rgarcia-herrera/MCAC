@@ -165,7 +165,7 @@ for v in veps.find( { '$or': [{ "transcript_consequences.polyphen_prediction" : 
                   'uniparc' : tc.get('uniparc'),
                   'variant_allele' : tc.get('variant_allele')             
             } 
-            variant['nmd_transcript_variants'].append( Nmd_transcript_variant(**c) )
+            variant['nmd_transcript_variants'].append( NMD_transcript_variant(**c) )
 
         if 'downstream_gene_variant' in tc['consequence_terms']:
             c = { 'canonical' : tc.get('canonical'),
