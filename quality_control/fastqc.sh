@@ -10,6 +10,7 @@ do
     for SIZE in {300,500}
     do
         OUTDIR=$FASTQCDIR/$SIZE/S${SAMPLE}
+        mkdir -p $OUTDIR
         $FASTQC -t 30 $FASTQDIR/$SIZE/S${SAMPLE}_R1.fastq.gz $FASTQDIR/$SIZE/S${SAMPLE}_R2.fastq.gz -o $OUTDIR
     done
 done
