@@ -1,11 +1,11 @@
 import numpy as np
 
-home = '/home/rgarcia/MCAC/qc/depth_miseq_hg19'
+home = '/home/rgarcia/MCAC/qc/depths/500'
 
 depths = {}
 for s in range(1,49):
     depths[s] = {}
-    with open("%s/S%02d_rg_realigned.bam.genes_depth.tsv" % (home,s)) as f:
+    with open("%s/S%02d_realigned.bam.genes_depth.tsv" % (home,s)) as f:
         for l in f.readlines():
             (gene, depth) = l.split()
             if gene in depths[s]:
