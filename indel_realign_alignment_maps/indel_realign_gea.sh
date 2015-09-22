@@ -6,10 +6,10 @@ REF=/home/rgarcia/MCAC/reference/Homo_sapiens/UCSC/hg19/Sequence/WholeGenomeFAST
 KNOWN=/home/rgarcia/MCAC/reference/1000G_phase1.indels.b37.vcf.gz
 
 
-for SAMPLE in $(seq -f "%02g" 17 26)
+for SAMPLE in {06,26}
 do
-    INTERVALS=$DIR/mau29/S${SAMPLE}.intervals
-    SAM=$DIR/mau29/S${SAMPLE}_rg.bam
+    INTERVALS=$DIR/gea/S${SAMPLE}.intervals
+    SAM=$DIR/gea/S${SAMPLE}_rg.bam
 
     # echo "creating intervals file"
     # echo $INTERVALS
@@ -22,7 +22,7 @@ do
     #      -o $INTERVALS &
 
     echo "realigning"
-    BAMOUT=$DIR/300/S${SAMPLE}_realigned.bam
+    BAMOUT=$DIR/gea/S${SAMPLE}_realigned.bam
     java -jar $GATK \
          -T IndelRealigner \
          -R $REF \
