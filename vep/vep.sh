@@ -19,13 +19,28 @@ VCFDIR=/home/rgarcia/MCAC/vcf
 
 
 
-COMPLETE_VCF="family_filtered_PTLiJATEiJIAT-JPAMuLACA_con_alelos.vcf
-family_filtered_PTLiJATEiJIAT-JPAMuLACA_sin_alelos.vcf
-family_filtered_PTLiJATE-JPAMuLACA_con_alelos.vcf
-family_filtered_PTLiJATE-JPAMuLACA_sin_alelos.vcf"
+# COMPLETE_VCF="family_filtered_PTLiJATEiJIAT-JPAMuLACA_con_alelos.vcf
+# family_filtered_PTLiJATEiJIAT-JPAMuLACA_sin_alelos.vcf
+# family_filtered_PTLiJATE-JPAMuLACA_con_alelos.vcf
+# family_filtered_PTLiJATE-JPAMuLACA_sin_alelos.vcf"
 
-for VCF in $COMPLETE_VCF
+# for VCF in $COMPLETE_VCF
+# do
+#     OUT=`basename $VCF .vcf`
+#     $VEP -i $VCFDIR/complete/$VCF --json -o $VCFDIR/complete/${OUT}.vep.json --everything --fork 30 --offline --assembly GRCh37    
+# done
+
+
+
+
+
+EXM_ILLUMINA_VCF="family_filtered_JLRLiJLRMiGEL_con_alelos.vcf
+family_filtered_JLRMiYRM_con_alelos.vcf
+family_filtered_JLRLiJLRMiGEL_sin_alelos.vcf
+family_filtered_JLRMiYRM_sin_alelos.vcf"
+
+for VCF in $EXM_ILLUMINA_VCF
 do
     OUT=`basename $VCF .vcf`
-    $VEP -i $VCFDIR/complete/$VCF --json -o $VCFDIR/complete/${OUT}.vep.json --everything --fork 30 --offline --assembly GRCh37    
+    $VEP -i $VCFDIR/exm_illumina/$VCF --json -o $VCFDIR/exm_illumina/${OUT}.vep.json --everything --fork 30 --offline --assembly GRCh37    
 done
