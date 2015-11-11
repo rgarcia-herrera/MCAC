@@ -34,13 +34,25 @@ VCFDIR=/home/rgarcia/MCAC/vcf
 
 
 
-EXM_ILLUMINA_VCF="family_filtered_JLRLiJLRMiGEL_con_alelos.vcf
-family_filtered_JLRMiYRM_con_alelos.vcf
-family_filtered_JLRLiJLRMiGEL_sin_alelos.vcf
-family_filtered_JLRMiYRM_sin_alelos.vcf"
+# EXM_ILLUMINA_VCF="family_filtered_JLRLiJLRMiGEL_con_alelos.vcf
+# family_filtered_JLRMiYRM_con_alelos.vcf
+# family_filtered_JLRLiJLRMiGEL_sin_alelos.vcf
+# family_filtered_JLRMiYRM_sin_alelos.vcf"
 
-for VCF in $EXM_ILLUMINA_VCF
+# EXM_ILLUMINA_VCF="DLA.vcf
+# GEL.vcf
+# GMCA.vcf
+# JLRL.vcf
+# PTL.vcf"
+
+# for VCF in $EXM_ILLUMINA_VCF
+# do
+#     OUT=`basename $VCF .vcf`
+#     $VEP -i $VCFDIR/exm_illumina/$VCF --json -o $VCFDIR/exm_illumina/${OUT}.vep.json --everything --fork 30 --offline --assembly GRCh37    
+# done
+
+
+for SAMPLE in $(seq -f "%02g" 1 17)
 do
-    OUT=`basename $VCF .vcf`
-    $VEP -i $VCFDIR/exm_illumina/$VCF --json -o $VCFDIR/exm_illumina/${OUT}.vep.json --everything --fork 30 --offline --assembly GRCh37    
+    $VEP -i $VCFDIR/caem_fvi_rigo/S${SAMPLE}.vcf --json -o $VCFDIR/caem_fvi_rigo/S${SAMPLE}.vep.json --everything --fork 30 --offline --assembly GRCh37
 done
