@@ -66,25 +66,39 @@ ADDORREPLACEREADGROUPS=/home/rgarcia/downloads/picard-tools-1.121/AddOrReplaceRe
 
 
 
-EXM_ILLIMINA="DLA
-GEL
-GMCA
-JLRL
-JLRM
-LMG
-PTL
-YRN"
+# EXM_ILLIMINA="DLA
+# GEL
+# GMCA
+# JLRL
+# JLRM
+# LMG
+# PTL
+# YRN"
 
-for SAMPLE in $EXM_ILLIMINA
+# for SAMPLE in $EXM_ILLIMINA
+# do
+#     BAM=$DIR/exm_illumina/${SAMPLE}.bam
+#     BAMOUT=$DIR/exm_illumina/${SAMPLE}_rg.bam
+#     java -jar $ADDORREPLACEREADGROUPS \
+#                  I=$BAM \
+#                  LB='mcac' \
+#                  PL='exm_illumina' \
+#                  PU='nil' \
+#                  SM=$SAMPLE \
+#                  O=$BAMOUT &
+# done
+         
+
+
+for SAMPLE in $(seq -f "%02g" 1 17)           
 do
-    BAM=$DIR/exm_illumina/${SAMPLE}.bam
-    BAMOUT=$DIR/exm_illumina/${SAMPLE}_rg.bam
+    BAM=$DIR/exm_caem_fvi_rigo/S${SAMPLE}.bam
+    BAMOUT=$DIR/exm_caem_fvi_rigo/S${SAMPLE}_rg.bam
     java -jar $ADDORREPLACEREADGROUPS \
                  I=$BAM \
                  LB='mcac' \
-                 PL='exm_illumina' \
+                 PL='illumina' \
                  PU='nil' \
                  SM=$SAMPLE \
-                 O=$BAMOUT &
+                 O=$BAMOUT
 done
-         
