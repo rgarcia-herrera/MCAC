@@ -22,13 +22,13 @@ do
     #      -o $INTERVALS &
 
     echo "realigning"
-    BAMOUT=$DIR/300/S${SAMPLE}_realigned.bam
+    BAMOUT=$DIR/mau29/S${SAMPLE}_realigned.bam
     java -jar $GATK \
          -T IndelRealigner \
          -R $REF \
          -I $SAM \
          -dt NONE \
          -targetIntervals $INTERVALS \
-         -o $BAMOUT
+         -o $BAMOUT &
 done
 
