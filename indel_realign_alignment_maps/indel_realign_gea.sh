@@ -6,7 +6,7 @@ REF=/home/rgarcia/MCAC/reference/Homo_sapiens/UCSC/hg19/Sequence/WholeGenomeFAST
 KNOWN=/home/rgarcia/MCAC/reference/1000G_phase1.indels.b37.vcf.gz
 
 
-for SAMPLE in {06,26}
+for SAMPLE in $(seq -f "%02g" 1 49)
 do
     INTERVALS=$DIR/gea/S${SAMPLE}.intervals
     SAM=$DIR/gea/S${SAMPLE}_rg.bam
