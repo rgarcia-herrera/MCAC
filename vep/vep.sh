@@ -15,10 +15,17 @@ VCFDIR=/home/rgarcia/MCAC/vcf
 
 
 
-COMPLETE_VCF="family_filtered_PTLiJATEiJIAT-JPAMuLACA.vcf
-family_filtered_PTLiJATE-JPAMuLACA.vcf
-family_filtered_PTLiJATEiJIAT.vcf
-family_filtered_PTLiJATE.vcf"
+# COMPLETE_VCF="family_filtered_PTLiJATEiJIAT-JPAMuLACA.vcf
+# family_filtered_PTLiJATE-JPAMuLACA.vcf
+# family_filtered_PTLiJATEiJIAT.vcf
+# family_filtered_PTLiJATE.vcf"
+
+COMPLETE_VCF="A01.JATE.haloplex.vcf
+B01.PTL.haloplex.vcf
+C01.JPAM.halople.vcf
+D01.LACA.halople.vcf
+E01.JIAT.halople.vcf"
+
 
 for VCF in $COMPLETE_VCF
 do
