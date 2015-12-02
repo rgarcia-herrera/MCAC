@@ -9,7 +9,7 @@ KNOWN=/home/rgarcia/MCAC/reference/1000G_phase1.indels.b37.vcf.gz
 for SAMPLE in $(seq -f "%02g" 1 17)
 do
     INTERVALS=$DIR/exm_caem_fvi_rigo/S${SAMPLE}.intervals
-    SAM=$DIR/exm_caem_fvi_rigo/S${SAMPLE}_rg.bam
+    SAM=$DIR/exm_caem_fvi_rigo/S${SAMPLE}_rg_dedup.bam
 
     # echo "creating intervals file"
     # echo $INTERVALS
