@@ -20,18 +20,18 @@ VCFDIR=/home/rgarcia/MCAC/vcf
 # family_filtered_PTLiJATEiJIAT.vcf
 # family_filtered_PTLiJATE.vcf"
 
-COMPLETE_VCF="A01.JATE.haloplex.vcf
-B01.PTL.haloplex.vcf
-C01.JPAM.halople.vcf
-D01.LACA.halople.vcf
-E01.JIAT.halople.vcf"
+# COMPLETE_VCF="A01.JATE.haloplex.vcf
+# B01.PTL.haloplex.vcf
+# C01.JPAM.halople.vcf
+# D01.LACA.halople.vcf
+# E01.JIAT.halople.vcf"
 
 
-for VCF in $COMPLETE_VCF
-do
-    OUT=`basename $VCF .vcf`
-    $VEP -i $VCFDIR/complete/$VCF -o $VCFDIR/complete/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37    
-done
+# for VCF in $COMPLETE_VCF
+# do
+#     OUT=`basename $VCF .vcf`
+#     $VEP -i $VCFDIR/complete/$VCF -o $VCFDIR/complete/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37    
+# done
 
 
 # EXM_ILLUMINA_VCF="family_filtered_JLRLiJLRMiGEL_con_alelos.vcf
@@ -61,3 +61,30 @@ done
 #do
 #    $VEP -i $VCFDIR/caem_fvi_rigo/S${SAMPLE}.vcf -o $VCFDIR/caem_fvi_rigo/S${SAMPLE}.vep.csv --everything --fork 30 --offline --assembly GRCh37
 #done
+
+
+
+# COMPLETE_EXCLUSIVE="jate-rest.vcf
+# jiat-rest.vcf
+# jpam-rest.vcf
+# laca-rest.vcf
+# ptl-rest.vcf"
+
+# for VCF in $COMPLETE_EXCLUSIVE
+# do
+#     OUT=`basename $VCF .vcf`
+#     $VEP -i $VCFDIR/complete/$VCF -o $VCFDIR/complete/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37
+# done
+
+
+#A01.JATE.vcf"
+COMPLETE_COMPLETE="B01.PTL.vcf
+C01.JPAM.vcf
+D01.LACA.vcf
+E01.JIAT.vcf"
+
+for VCF in $COMPLETE_COMPLETE
+do
+    OUT=`basename $VCF .vcf`
+    $VEP -i $VCFDIR/complete/$VCF -o $VCFDIR/complete/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37
+done
