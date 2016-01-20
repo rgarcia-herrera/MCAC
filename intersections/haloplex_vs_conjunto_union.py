@@ -68,7 +68,7 @@ union     = set.union( *cases.values() )
 
 
 shade = {}
-print [sample for sample in cases]
+# print [sample for sample in cases]
 
 for v in union:
     found = [v,]
@@ -85,4 +85,9 @@ for v in union:
         shade[ones] = [found,]
 
 
-pprint(shade)
+for ones in shade:
+    with open('ones_%s.csv' % ones, 'w') as f:
+        f.write(" ".join([sample for sample in cases]))
+        for found in shade[ones]:
+            f.write(" ".join([str(w) for w in found])+"\n")
+
