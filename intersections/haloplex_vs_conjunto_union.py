@@ -1,8 +1,9 @@
 import vcf
+import os
 from pprint import pprint
 
 
-files_cases = [
+vcf_paths = [
     '/home/rgarcia/MCAC/vcf/haloplex500basespace/11_S1.vcf',
     '/home/rgarcia/MCAC/vcf/haloplex500basespace/12_S1.vcf',
     '/home/rgarcia/MCAC/vcf/haloplex500basespace/13_S1.vcf',
@@ -55,17 +56,20 @@ files_cases = [
 ]
 
 cases = {}
-for path in files_cases:
-    f = open(path, 'r')
-    cases[f.name] = set()
-    vcfr = vcf.Reader( f )
+for path in vcf_paths:
+    sample        = os.path.split(path)[1].split('_')[0]
+    cases[sample] = set()
+    vcfr = vcf.Reader( open(path, 'r') )
     for v in vcfr:
         variant = "%s:%s" % (v.CHROM, v.POS)
-        cases[f.name].add(variant)
-
+        cases[sample].add(variant)
+        
 union     = set.union( *cases.values() )
 
+
+shade = {}
 print [sample for sample in cases]
+
 for v in union:
     found = [v,]
     for sample in cases:
@@ -73,4 +77,12 @@ for v in union:
             found.append(1)
         else:
             found.append(0)
-    print found
+
+    ones = found.count(1)
+    if ones in shade:
+        shade[ones].append(found)
+    else:
+        shade[ones] = [found,]
+
+
+pprint(shade)
