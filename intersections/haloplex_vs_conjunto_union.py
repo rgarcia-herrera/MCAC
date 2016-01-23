@@ -61,7 +61,7 @@ for path in vcf_paths:
     cases[sample] = set()
     vcfr = vcf.Reader( open(path, 'r') )
     for v in vcfr:
-        variant = "%s:%s" % (v.CHROM, v.POS)
+        variant = "%s:%s_%s" % (v.CHROM, v.POS, v.INFO.get('CSQT','-'))
         cases[sample].add(variant)
         
 union     = set.union( *cases.values() )
@@ -87,7 +87,7 @@ for v in union:
 
 for ones in shade:
     with open('ones_%s.csv' % ones, 'w') as f:
-        f.write(" ".join([sample for sample in cases]))
+        f.write(" ".join([sample for sample in cases])+"\n")
         for found in shade[ones]:
             f.write(" ".join([str(w) for w in found])+"\n")
 
