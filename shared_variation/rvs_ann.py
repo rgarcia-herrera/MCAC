@@ -7,37 +7,26 @@ from pprint import pprint
 This script uses the Reference Variant Store at https://rvs.u.hpc.mssm.edu/ to annotate loci from a bed file.
 """
 
-def rvs_annotate( variants ):
+
+
+def rvs_annotate( vkeys, resource ):
+    vkeysquery = ",".join(vkeys)
+    url = 'https://rvs.u.hpc.mssm.edu/rest/%s/vkey/%s' % (resource, vkeysquery)
+    print url
+    results = urllib2.urlopen(
+        urllib2.Request(url))
+
+    found_vkeys = []
     annotations = []
-    for n in range(0,len(variants),20):
-        batch = list(variants)[n:n+19]
-        vkeys = []    
+    for ann in json.loads(results.read()):
+        ann[u'resource'] = resource
+        annotations.append(ann)
+        found_vkeys.append(ann['vkey'])
+    results.close()
 
-        for v in batch:
-            (chrom,start,alt) = v
-            # TODO: this grabs just snps
-            vkey = VarCharKey.v2k(chrom, start, start, alt)
-            vkeys.append(vkey)
-
-        vkeysquery = ",".join(vkeys)
-
-
-        for resource in [u'frequency', u'disease', u'prediction', u'impact']:
-            url = 'https://rvs.u.hpc.mssm.edu/rest/%s/vkey/%s' % (resource, vkeysquery)
-            results = urllib2.urlopen(
-                urllib2.Request(url))
-            for ann in json.loads(results.read()):
-                ann[u'resource'] = resource
-                annotations.append(ann)
-            
-            results.close()
-
+    for unannotated in set(vkeys)-set(found_vkeys):
+        annotations.append({u'resource': resource,
+                            u'vkey'    : unannotated})
+    
     return annotations
 
-
-
-
-
-
-
-# print rvs_annotate([("1",955553,"C"), ("7",140434407,"A")])

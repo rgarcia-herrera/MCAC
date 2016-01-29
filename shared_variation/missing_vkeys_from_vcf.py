@@ -7,7 +7,7 @@ from pprint import pprint
 
 
 
-parser = argparse.ArgumentParser(description='Get RVS annotations, load them to mongodb')
+parser = argparse.ArgumentParser(description='Create pickle with RVS annotations missing in mongo from variants in VCF.')
 parser.add_argument('--vcf', type=argparse.FileType('r'), required=True, help='vcf file to annotate')
 parser.add_argument('--url', default="mongodb://localhost:27017", help='mongo db url')
 parser.add_argument('--database', default="rvs_annotations", help='database')
@@ -42,14 +42,19 @@ for v in vcfr:
             vkey = VarCharKey.v2k(chrom, start, end, alt)
             
             for resource in resources:
-                if rvs_collection.count({'chr'      : chrom,
-                                         'start'    : start,
-                                         'end'      : end,
-                                         'alt'      : alt,
-                                         'vkey'     : vkey,
-                                         'samples'  : {'$in': vcfr.samples},
-                                         'resource' : resource}) == 0:
+                # for n in  rvs_collection.find({'chr'      : str(chrom),
+                #                                'start'    : str(start),
+                #                                'end'      : str(end),
+                #                                'alt'      : alt,}):
+                #                                #'vkey'     : vkey,
+                #                                # 'samples'  : {'$in': vcfr.samples},
+                #                                #'resource' : resource}):
+                #     pprint(n)
+                if rvs_collection.count({ 'vkey'     : vkey,
+                                          'samples'  : {'$in': vcfr.samples},
+                                          'resource' : resource}) == 0:
                     missing_vkeys[resource].add(vkey)
 
+missing_vkeys[u'samples'] = vcfr.samples
 pickle.dump(missing_vkeys, args.outpickle)
 
