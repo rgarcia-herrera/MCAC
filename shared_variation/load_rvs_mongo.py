@@ -1,24 +1,55 @@
+import argparse
+from pymongo import MongoClient
 import vcf
-import os
+from varnorm.varcharkey import VarCharKey
+import pickle
 from pprint import pprint
-from samples import vcf_paths
-from rvs_ann import rvs_annotate
-
-variants = {}
-for sample in vcf_paths:
-    variants[sample] = set()
-    vcfr = vcf.Reader( open(vcf_paths[sample], 'r') )
-
-    for v in vcfr:
-        if v.is_snp:
-            variant = (v.CHROM.replace('chr',''), v.POS, str(v.ALT[0]))
-            variants[sample].add(variant)
 
 
-for sample in variants:
-    for v in rvs_annotate(variants[sample]):
-        v['sample'] = sample
-        # load to mongo
 
+parser = argparse.ArgumentParser(description='Get RVS annotations, load them to mongodb')
+parser.add_argument('--vcf', type=argparse.FileType('r'), required=True, help='vcf file to annotate')
+parser.add_argument('--url', default="mongodb://localhost:27017", help='mongo db url')
+parser.add_argument('--database', default="rvs_annotations", help='database')
+parser.add_argument('--collection', default="default", help='database')
+parser.add_argument('--outpickle', type=argparse.FileType('w'), required=True, help='will create a pickle with missing vkeys')
+args    = parser.parse_args()
 
+# create mongo client
+client  = MongoClient(args.url)
+db      = client[args.database]
+rvs_collection = db[args.collection]
+
+# init output dict
+resources = [u'frequency', u'disease', u'prediction', u'impact']
+missing_vkeys={resource: set() for resource in resources}
+
+# query for annotated variants from vcf
+vcfr = vcf.Reader( args.vcf )
+for v in vcfr:
+    if len(v.FILTER)==0:
+        for alt in v.ALT:
+            chrom = v.CHROM.replace('chr','')
+            start = v.POS
+            alt = str(alt)
+            
+            if v.is_snp or (not v.is_deletion and v.is_indel):
+                # snps or insertions
+                end = v.POS
+            elif v.is_deletion:
+                end = v.POS + (len(v.REF) - len(alt))
+
+            vkey = VarCharKey.v2k(chrom, start, end, alt)
+            
+            for resource in resources:
+                if rvs_collection.count({'chr'      : chrom,
+                                         'start'    : start,
+                                         'end'      : end,
+                                         'alt'      : alt,
+                                         'vkey'     : vkey,
+                                         'samples'  : {'$in': vcfr.samples},
+                                         'resource' : resource}) == 0:
+                    missing_vkeys[resource].add(vkey)
+
+pickle.dump(missing_vkeys, args.outpickle)
 
