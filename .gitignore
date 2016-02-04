@@ -53,13 +53,17 @@ docs/_build/
 # PyBuilder
 target/
 
-# data dirs
+# data dirs and files
 sam/
 reference/
 vcf/
 fastq/
 qc/
 targets/
+*tsv
+*sqlite
+*tsv
+*.svg
 
 # emacs stuff
 \#*
