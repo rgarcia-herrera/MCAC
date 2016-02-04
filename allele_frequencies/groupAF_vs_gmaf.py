@@ -12,9 +12,13 @@ for path in vcf_paths:
     for sample in vcfr.samples:
         cases[sample] = set()
         for v in vcfr:
-            if v.ID and 'GMAF' in v.INFO:
+            if v.ID and 'GMAF' in v.INFO and len(v.FILTER)==0:
                 for gmaf in v.INFO['GMAF']:
-                    variant = (v.CHROM, v.POS, gmaf)
+                    if 'CSQT' in v.INFO:
+                        gene_symbol = v.INFO['CSQT'][0].split('|')[0]
+                    else:
+                        gene_symbol = '?'
+                    variant = (gene_symbol, v.CHROM, v.POS, gmaf)
                     cases[sample].add(variant)
 
 
@@ -30,5 +34,9 @@ for v in union:
             frequencies[v]+=1
 
 
-pprint(frequencies)
-exit(0)
+grouplen = len(vcf_paths)
+
+for v in frequencies:
+    print v[0],v[1],v[2],v[3].split('|')[0],v[3].split('|')[1], float(frequencies[v])/float(grouplen)
+
+
