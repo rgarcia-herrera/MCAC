@@ -1,0 +1,13 @@
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/EEPO_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/CFOG_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/RRR_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/IXH_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/JCVM_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/MJG_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/JSMC_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/CYDR_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/FJGA_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/JDJM_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/JOS_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/BWN_S1_missing.pickle
+python load_vkeys.py --collection scd --pickle ../vcf/hlplxII_BS_AOB/BWP_S1_missing.pickle
