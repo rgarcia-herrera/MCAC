@@ -17,9 +17,11 @@ parser.add_argument('--url', default="mongodb://localhost:27017", help='mongo db
 parser.add_argument('--database', default="rvs_annotations", help='database')
 parser.add_argument('--collection', default="default", help='database')
 parser.add_argument('--query', required=True, help='mongo query')
+parser.add_argument('--algorythm', required=True,choices = [ 'average','complete','ward','centroid','single','weighted'], help='choose algorythm to display')
+parser.add_argument('--outfile', type=argparse.FileType('w'), required=True, help='file path and name')
 #parser.add_argument('--plot', type=argparse.FileType('w'), required=True, help='SVG output')
 args    = parser.parse_args()
-
+ 
 # create mongo client
 client  = MongoClient(args.url)
 db      = client[args.database]
@@ -28,7 +30,7 @@ rvs_collection = db[args.collection]
 
 
 
-
+ 
 sets = {}
 for v in rvs_collection.find(json.loads(args.query)):
     for sample in v['samples']:
@@ -73,28 +75,21 @@ for i in keys:
 
 rows = np.array( rows )
 
-algorythms = [ 'average',
-               'complete',
-               'ward',
-               'centroid',
-               'single',
-               'weighted',]
 
 
-for algorythm in algorythms:
-        # plot dendrograms
-        fig = plt.figure(figsize=(15,15))
+# plot dendrograms
+fig = plt.figure(figsize=(15,15))
 
-        fig.add_subplot()
-        linkage_matrix = linkage(rows, algorythm)
+fig.add_subplot()
+linkage_matrix = linkage(rows,args.algorythm)
 
-        a = dendrogram(linkage_matrix,
-                       color_threshold=1,
-                       labels=keys,
-                       show_leaf_counts=False,
-                       leaf_font_size=5,
-                       leaf_rotation=0.0,
-                       orientation='left',
-               )
-        plt.savefig('dendrogram_%s.svg' % algorythm)
-        plt.close()
+a = dendrogram(linkage_matrix,
+color_threshold=1,
+labels=keys,
+show_leaf_counts=False,
+leaf_font_size=5,
+leaf_rotation=0.0,
+orientation='left',
+)
+plt.savefig(args.outfile)
+plt.close()
