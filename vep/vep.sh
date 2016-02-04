@@ -90,8 +90,6 @@ VCFDIR=/home/rgarcia/MCAC/vcf
 # done
 
 
-
-
 haloplexbasespace="11_S1.vcf
 12_S1.vcf
 13_S1.vcf
@@ -129,7 +127,19 @@ haloplexbasespace="11_S1.vcf
 45_S1.vcf
 46_S1.vcf
 47_S1.vcf
-48_S1.vcf
+48_S1.vcf"
+
+for VCF in $haloplexbasespace
+do
+    OUT=`basename $VCF .vcf`
+    $VEP -i $VCFDIR/hlplxI_BS_AOB/$VCF -o $VCFDIR/hlplxI_BS_AOB/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37
+done
+
+
+
+
+haloplexbasespace="BWN_S1.vcf
+BWP_S1.vcf
 CFOG_S1.vcf
 CYDR_S1.vcf
 EEPO_S1.vcf
@@ -145,5 +155,28 @@ RRR_S1.vcf"
 for VCF in $haloplexbasespace
 do
     OUT=`basename $VCF .vcf`
-    $VEP -i $VCFDIR/haloplex500basespace/$VCF -o $VCFDIR/haloplex500basespace/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37
+    $VEP -i $VCFDIR/hlplxII_BS_AOB/$VCF -o $VCFDIR/hlplxII_BS_AOB/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37
+done
+
+
+
+haloplexbasespace="DLA_S1.vcf
+LMG_S1.vcf"
+
+for VCF in $haloplexbasespace
+do
+    OUT=`basename $VCF .vcf`
+    $VEP -i $VCFDIR/exmIlluminaI_BS_AOB/$VCF -o $VCFDIR/exmIlluminaI_BS_AOB/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37
+done
+
+
+haloplexbasespace="EX-MV10_S1.vcf
+EX-MV11_S1.vcf
+EX-MV8_S1.vcf
+EX-MV9_S1.vcf"
+
+for VCF in $haloplexbasespace
+do
+    OUT=`basename $VCF .vcf`
+    $VEP -i $VCFDIR/exmIlluminaII_BS_AOB/$VCF -o $VCFDIR/exmIlluminaII_BS_AOB/${OUT}.vep.csv --everything --fork 30 --offline --assembly GRCh37
 done
