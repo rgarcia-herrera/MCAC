@@ -90,44 +90,44 @@ VCFDIR=/home/rgarcia/MCAC/vcf
 # done
 
 
-haloplexbasespace="11_S1.vcf
-12_S1.vcf
-13_S1.vcf
-14_S1.vcf
-15_S1.vcf
-16_S1.vcf
-17_S1.vcf
-18_S1.vcf
-19_S1.vcf
-20_S1.vcf
-21_S1.vcf
-22_S1.vcf
-23_S1.vcf
-24_S1.vcf
-25_S1.vcf
-26_S1.vcf
-27_S1.vcf
-28_S1.vcf
-29_S1.vcf
-30_S1.vcf
-31_S1.vcf
-32_S1.vcf
-33_S1.vcf
-34_S1.vcf
-35_S1.vcf
-36_S1.vcf
-37_S1.vcf
-38_S1.vcf
-39_S1.vcf
-40_S1.vcf
-41_S1.vcf
-42_S1.vcf
-43_S1.vcf
-44_S1.vcf
-45_S1.vcf
-46_S1.vcf
-47_S1.vcf
-48_S1.vcf"
+haloplexbasespace="11_S1_PASS.recode.vcf
+12_S1_PASS.recode.vcf
+13_S1_PASS.recode.vcf
+14_S1_PASS.recode.vcf
+15_S1_PASS.recode.vcf
+16_S1_PASS.recode.vcf
+17_S1_PASS.recode.vcf
+18_S1_PASS.recode.vcf
+19_S1_PASS.recode.vcf
+20_S1_PASS.recode.vcf
+21_S1_PASS.recode.vcf
+22_S1_PASS.recode.vcf
+23_S1_PASS.recode.vcf
+24_S1_PASS.recode.vcf
+25_S1_PASS.recode.vcf
+26_S1_PASS.recode.vcf
+27_S1_PASS.recode.vcf
+28_S1_PASS.recode.vcf
+29_S1_PASS.recode.vcf
+30_S1_PASS.recode.vcf
+31_S1_PASS.recode.vcf
+32_S1_PASS.recode.vcf
+33_S1_PASS.recode.vcf
+34_S1_PASS.recode.vcf
+35_S1_PASS.recode.vcf
+36_S1_PASS.recode.vcf
+37_S1_PASS.recode.vcf
+38_S1_PASS.recode.vcf
+39_S1_PASS.recode.vcf
+40_S1_PASS.recode.vcf
+41_S1_PASS.recode.vcf
+42_S1_PASS.recode.vcf
+43_S1_PASS.recode.vcf
+44_S1_PASS.recode.vcf
+45_S1_PASS.recode.vcf
+46_S1_PASS.recode.vcf
+47_S1_PASS.recode.vcf
+48_S1_PASS.recode.vcf"
 
 for VCF in $haloplexbasespace
 do
@@ -138,19 +138,19 @@ done
 
 
 
-haloplexbasespace="BWN_S1.vcf
-BWP_S1.vcf
-CFOG_S1.vcf
-CYDR_S1.vcf
-EEPO_S1.vcf
-FJGA_S1.vcf
-IXH_S1.vcf
-JCVM_S1.vcf
-JDJM_S1.vcf
-JOS_S1.vcf
-JSMC_S1.vcf
-MJG_S1.vcf
-RRR_S1.vcf"
+haloplexbasespace="BWN_S1_PASS.recode.vcf
+BWP_S1_PASS.recode.vcf
+CFOG_S1_PASS.recode.vcf
+CYDR_S1_PASS.recode.vcf
+EEPO_S1_PASS.recode.vcf
+FJGA_S1_PASS.recode.vcf
+IXH_S1_PASS.recode.vcf
+JCVM_S1_PASS.recode.vcf
+JDJM_S1_PASS.recode.vcf
+JOS_S1_PASS.recode.vcf
+JSMC_S1_PASS.recode.vcf
+MJG_S1_PASS.recode.vcf
+RRR_S1_PASS.recode.vcf"
 
 for VCF in $haloplexbasespace
 do
@@ -160,8 +160,8 @@ done
 
 
 
-haloplexbasespace="DLA_S1.vcf
-LMG_S1.vcf"
+haloplexbasespace="DLA_S1_PASS.recode.vcf
+LMG_S1_PASS.recode.vcf"
 
 for VCF in $haloplexbasespace
 do
@@ -170,10 +170,10 @@ do
 done
 
 
-haloplexbasespace="EX-MV10_S1.vcf
-EX-MV11_S1.vcf
-EX-MV8_S1.vcf
-EX-MV9_S1.vcf"
+haloplexbasespace="EX-MV10_S1_PASS.recode.vcf
+EX-MV11_S1_PASS.recode.vcf
+EX-MV8_S1_PASS.recode.vcf
+EX-MV9_S1_PASS.recode.vcf"
 
 for VCF in $haloplexbasespace
 do
