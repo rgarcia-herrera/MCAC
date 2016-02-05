@@ -1,29 +1,33 @@
-import vcf
+import csv
 import os
 from pprint import pprint
 
-from samples import vcf_paths
+from samples import vep_paths
 
 
 cases = {}
-for path in vcf_paths:
-
-    vcfr = vcf.Reader( open(path, 'r') )
-    for sample in vcfr.samples:
+for path in vep_paths:
+    with open(path) as f:
+        csvr = csv.reader(f, delimiter='\t')
+        sample = os.path.basename(path)
         cases[sample] = set()
-        for v in vcfr:
-            if v.ID and 'GMAF' in v.INFO and len(v.FILTER)==0:
-                for gmaf in v.INFO['GMAF']:
-                    if 'CSQT' in v.INFO:
-                        gene_symbol = v.INFO['CSQT'][0].split('|')[0]
-                    else:
-                        gene_symbol = '?'
-                    variant = (gene_symbol, v.CHROM, v.POS, gmaf)
-                    cases[sample].add(variant)
+        for v in csvr:
+            if not v[0].startswith('#'):
+
+                extraslist = v[13].split(';')
+                extras = {}
+                for e in extraslist:
+                    (key,value) = e.split('=')
+                    extras[key] = value
+
+                if 'GMAF' in extras:
+                    rsids = v[12]
+                    gmafs = extras['GMAF'].split(',')
+                    for gmaf in gmafs:
+                        variant = (extras.get('SYMBOL','-'), rsids, v[1], gmaf)
+                        cases[sample].add(variant)
 
 
-
-                
 union     = set.union( *cases.values() )
 
 frequencies = {v: 0 for v in union}
@@ -33,10 +37,15 @@ for v in union:
         if v in cases[sample]:
             frequencies[v]+=1
 
+grouplen = len(vep_paths)
 
-grouplen = len(vcf_paths)
-
+print "symbol","location","gmaf","groupaf"
+print "rsid", "pos", "gmaf", "groupaf"
 for v in frequencies:
-    print v[0],v[1],v[2],v[3].split('|')[0],v[3].split('|')[1], float(frequencies[v])/float(grouplen)
-
+    # if len(v[2].split(':')) > 2:
+    #     print v
+    #     print v[2].split(',')
+    groupaf = float(frequencies[v])/float(grouplen*2)
+    (alt,gmaf) = v[3].split(':')
+    print v[0],v[1],v[2],alt,gmaf,groupaf
 
