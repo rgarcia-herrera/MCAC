@@ -2,11 +2,11 @@ import csv
 import os
 from pprint import pprint
 
-from samples import vep_paths
+from samples import vep_probands
 
 
 cases = {}
-for path in vep_paths:
+for path in vep_probands:
     with open(path) as f:
         csvr = csv.reader(f, delimiter='\t')
         sample = os.path.basename(path)
@@ -37,15 +37,12 @@ for v in union:
         if v in cases[sample]:
             frequencies[v]+=1
 
-grouplen = len(vep_paths)
+grouplen = len(vep_probands) * 2
 
-print "symbol","location","gmaf","groupaf"
-print "rsid", "pos", "gmaf", "groupaf"
+print ";".join(["symbol","keys","location","alt","gmaf","groupaf"])
+
 for v in frequencies:
-    # if len(v[2].split(':')) > 2:
-    #     print v
-    #     print v[2].split(',')
     groupaf = float(frequencies[v])/float(grouplen*2)
     (alt,gmaf) = v[3].split(':')
-    print v[0],v[1],v[2],alt,gmaf,groupaf
+    print ";".join([v[0],v[1],v[2],str(alt),str(gmaf),str(groupaf)])
 
