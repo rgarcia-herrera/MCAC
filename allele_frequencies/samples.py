@@ -126,8 +126,53 @@ vep_paths = [
 
 
 
+vcf_probands = [
+    '/home/rgarcia/MCAC/vcf/complete/B01.PTL_HLPLX_vep.vcf',
+#    '/home/rgarcia/MCAC/vcf/exmIlluminaII_BS_AOB/EX-MV8_S1_PASS.recode_vep.vcf',    
+#    '/home/rgarcia/MCAC/vcf/exmIlluminaII_BS_AOB/EX-MV8_S1_PASS.recode_vep.vcf',
+
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/11_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/12_S1_PASS.recode_vep.vcf',    
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/15_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/20_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/21_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/23_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/25_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/26_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/27_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/28_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/29_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/30_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/31_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/32_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/33_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/34_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/35_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/36_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/37_S1_PASS.recode_vep.vcf',    
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/38_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/39_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/40_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/41_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/44_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/47_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/48_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/CYDR_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/IXH_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/FJGA_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/CFOG_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/JDJM_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/RRR_S1_PASS.recode_vep.vcf',    
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/EEPO_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/JOS_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/MJG_S1_PASS.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/hlplxII_BS_AOB/JSMC_S1_PASS.recode_vep.vcf',
+]
+
+
 vep_probands = [
     '/home/rgarcia/MCAC/vcf/complete/B01.PTL_ABO.csv',
+    '/home/rgarcia/MCAC/vcf/exmIlluminaII_BS_AOB/EX-MV8_S1_PASS.recode.vep.csv',    
     '/home/rgarcia/MCAC/vcf/exmIlluminaII_BS_AOB/EX-MV8_S1_PASS.recode.vep.csv',
     '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/11_S1_PASS.recode.vep.csv',
     '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/15_S1_PASS.recode.vep.csv',
