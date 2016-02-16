@@ -43,13 +43,15 @@ for path in vcf_probands:
                             variants[vkey]['het'].add(sample)
 
 
-print ";".join(["vkey","symbol","existing","gmaf","het","hom"])
+print ";".join(["vkey","symbol","existing","gmaf","het","hom","het_count", "hom_count"])
 
 for v in variants:
     print ";".join([v,
-              variants[v]['symbol'],
-              variants[v]['existing'],
-              variants[v]['gmaf'],
-              ",".join(variants[v]['het']),
-              ",".join(variants[v]['hom'])])
+                    variants[v]['symbol'],
+                    variants[v]['existing'],
+                    variants[v]['gmaf'],
+                    ",".join(variants[v]['het']),
+                    ",".join(variants[v]['hom']),
+                    str(len(variants[v]['het'])),
+                    str(len(variants[v]['hom']))])
               
