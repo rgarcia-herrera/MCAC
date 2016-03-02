@@ -23,5 +23,8 @@ db      = client[args.database]
 rvs_collection = db[args.collection]
 
 for j in args.jsons:
-    annotations = json.load(j)
-    rvs_collection.insert_many(annotations)
+    try:
+        annotations = json.load(j)
+        rvs_collection.insert_many(annotations)
+    except:
+        print j.name
