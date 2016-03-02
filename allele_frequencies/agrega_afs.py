@@ -60,31 +60,29 @@ with open('freqs.csv') as f:
             'alt'      : alt,
             })
 
-        n+=1
-        for a in ann:
-            
-            row = v + [ a.get(u'esp6500_aa_af',u''),
-                      a.get(u'esp6500_af',u''),
-                      a.get(u'esp6500_ea_af',u''),
-                      a.get(u'exac_af',u''),
-                      a.get(u'exac_afr_af',u''),
-                      a.get(u'exac_amr_af',u''),
-                      a.get(u'exac_eas_af',u''),
-                      a.get(u'exac_eur_af',u''),
-                      a.get(u'exac_fin_af',u''),
-                      a.get(u'exac_sas_af',u''),
-                      a.get(u'gera_control_af',u''),
-                      a.get(u'tgp2_af',u''),
-                      a.get(u'tgp2_afr_af',u''),
-                      a.get(u'tgp2_amr_af',u''),
-                      a.get(u'tgp2_asn_af',u''),
-                      a.get(u'tgp2_eur_af',u''),
-                      a.get(u'tgp2_san_af',u''),
-                      a.get(u'tgp_af',u''),
-                      a.get(u'uk10k_control_af',u''),
-                      a.get(u'wellderly_af',u'')]
-        else:
+        if ann.count() == 0:
             row = v + ['-' for n in range(20)]
+        else:
+            for a in ann:
+                row = v + [ a.get(u'esp6500_aa_af',u''),
+                            a.get(u'esp6500_af',u''),
+                            a.get(u'esp6500_ea_af',u''),
+                            a.get(u'exac_af',u''),
+                            a.get(u'exac_afr_af',u''),
+                            a.get(u'exac_amr_af',u''),
+                            a.get(u'exac_eas_af',u''),
+                            a.get(u'exac_eur_af',u''),
+                            a.get(u'exac_fin_af',u''),
+                            a.get(u'exac_sas_af',u''),
+                            a.get(u'gera_control_af',u''),
+                            a.get(u'tgp2_af',u''),
+                            a.get(u'tgp2_afr_af',u''),
+                            a.get(u'tgp2_amr_af',u''),
+                            a.get(u'tgp2_asn_af',u''),
+                            a.get(u'tgp2_eur_af',u''),
+                            a.get(u'tgp2_san_af',u''),
+                            a.get(u'tgp_af',u''),
+                            a.get(u'uk10k_control_af',u''),
+                            a.get(u'wellderly_af',u'')]
             
-            
-            print ";".join(['-' if not r else r for r in row])
+        print ";".join(['-' if not r else r for r in row])
