@@ -25,6 +25,8 @@ rvs_collection = db[args.collection]
 for j in args.jsons:
     try:
         annotations = json.load(j)
-        rvs_collection.insert_many(annotations)
+        for a in annotations:
+            a['symbol'] = j.name.strip('annotations/').strip('.json')
+            rvs_collection.insert_one(a)
     except:
         print j.name
