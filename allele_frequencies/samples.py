@@ -127,10 +127,8 @@ vep_paths = [
 
 
 vcf_probands = [
-    '/home/rgarcia/MCAC/vcf/complete/B01.PTL_HLPLX_vep.vcf',
-#    '/home/rgarcia/MCAC/vcf/exmIlluminaII_BS_AOB/EX-MV8_S1_PASS.recode_vep.vcf',    
-#    '/home/rgarcia/MCAC/vcf/exmIlluminaII_BS_AOB/EX-MV8_S1_PASS.recode_vep.vcf',
-
+    '/home/rgarcia/MCAC/vcf/complete/B01.PTL_hlplx_manifest.recode.vcf',
+    '/home/rgarcia/MCAC/vcf/exmIlluminaII_BS_AOB/EX-MV8_S1_PASS_hlplx_manifiesto.recode.vcf',
     '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/11_S1_PASS.recode_vep.vcf',
     '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/12_S1_PASS.recode_vep.vcf',    
     '/home/rgarcia/MCAC/vcf/hlplxI_BS_AOB/15_S1_PASS.recode_vep.vcf',
