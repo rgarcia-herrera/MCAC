@@ -22,7 +22,8 @@ n=0
 with open('freqs.csv') as f:
     reader = csv.reader(f, delimiter=';')
     # print csv header
-    print ";".join(reader.next() + [ u'esp6500_aa_af',
+    print ";".join(reader.next() + [ 'symbol',
+                                     u'esp6500_aa_af',
                                      u'esp6500_af',
                                      u'esp6500_ea_af',
                                      u'exac_af',
@@ -61,10 +62,11 @@ with open('freqs.csv') as f:
             })
 
         if ann.count() == 0:
-            row = v + ['-' for n in range(20)]
+            row = v + ['' for n in range(21)]
         else:
             for a in ann:
-                row = v + [ a.get(u'esp6500_aa_af',u''),
+                row = v + [ a.get('symbol',''),
+                            a.get(u'esp6500_aa_af',u''),
                             a.get(u'esp6500_af',u''),
                             a.get(u'esp6500_ea_af',u''),
                             a.get(u'exac_af',u''),
@@ -85,4 +87,4 @@ with open('freqs.csv') as f:
                             a.get(u'uk10k_control_af',u''),
                             a.get(u'wellderly_af',u'')]
             
-        print ";".join(['-' if not r else r for r in row])
+        print ";".join(['' if not r else r for r in row])
