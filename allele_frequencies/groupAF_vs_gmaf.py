@@ -6,11 +6,12 @@ from samples import vcf_probands
 
 
 variants = {}
-
+samples = set()
 for path in vcf_probands:
     with open(path) as f:
         vcfr = vcf.Reader(f)
-        sample = vcfr.samples[0]
+        sample = "s_%s" % vcfr.samples[0]
+        samples.add(sample)
 
         for v in vcfr:
             if 'CSQ' in v.INFO:
@@ -42,16 +43,26 @@ for path in vcf_probands:
                         else:
                             variants[vkey]['het'].add(sample)
 
+samples = list(samples)
 
-print ";".join(["vkey","symbol","existing","gmaf","het","hom","het_count", "hom_count"])
+print ";".join(["vkey","existing","gmaf","het","hom","het_count", "hom_count"]+samples)
 
 for v in variants:
-    print ";".join([v,
-                    variants[v]['symbol'],
-                    variants[v]['existing'],
-                    variants[v]['gmaf'],
-                    ",".join(variants[v]['het']),
-                    ",".join(variants[v]['hom']),
-                    str(len(variants[v]['het'])),
-                    str(len(variants[v]['hom']))])
+    row = [v,
+           variants[v]['existing'],
+           variants[v]['gmaf'],
+           ",".join(variants[v]['het']),
+           ",".join(variants[v]['hom']),
+           str(len(variants[v]['het'])),
+           str(len(variants[v]['hom']))]
+
+    for s in samples:
+        if s in variants[v]['het']:
+            alleles = '1'
+        elif s in variants[v]['hom']:
+            alleles = '2'
+        else:
+            alleles = '0'
+        row.append(alleles)
+    print ";".join(row)
               
