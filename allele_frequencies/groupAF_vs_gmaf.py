@@ -2,8 +2,7 @@ import vcf
 import os
 from pprint import pprint
 
-from samples import vcf_probands
-
+from samples import vcf_probands_wide_hlplx as vcf_probands
 
 variants = {}
 samples = set()
