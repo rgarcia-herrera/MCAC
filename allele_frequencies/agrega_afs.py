@@ -12,14 +12,15 @@ TODO: Everything, for now it just counts the annotations from the
 import csv
 from pymongo import MongoClient
 from pprint import pprint
-
+from haloplex_symbols import symbol
+        
 client = MongoClient("mongodb://localhost:27017")
 db=client['rvs_annotations']
 c=db['cache']
 
 ks = set()
 n=0
-with open('freqs.csv') as f:
+with open('freqs_wide_hlplx.csv') as f:
     reader = csv.reader(f, delimiter=';')
     # print csv header
     print ";".join(reader.next() + [ 'symbol',
@@ -46,13 +47,17 @@ with open('freqs.csv') as f:
 
     
     for v in reader:
-        vkey = v[0]
-        (pos, alleles) = vkey.split('_')
+        vkey     = v[0]
+        splitkey = vkey.split('_')
+        pos      = splitkey[0]
+        alleles  = str(splitkey[1:])
+
         (chrom, start) = pos.split(':')
         chrom = chrom.strip('chr')
         (ref, alt) = alleles.split('/')
-        alt = alt.strip("[]")
-
+        alt = alt.strip("[']")
+        ref = ref.strip("[']")
+        
         # find annotation for variant in local cache
         ann = c.find({
             'chr'      : chrom,
@@ -62,10 +67,10 @@ with open('freqs.csv') as f:
             })
 
         if ann.count() == 0:
-            row = v + ['' for n in range(21)]
-        else:
+            row = v + [symbol(chrom, int(start))] + ['' for n in range(20)]
+        else:            
             for a in ann:
-                row = v + [ a.get('symbol',''),
+                row = v + [ symbol(chrom, int(start)),
                             a.get(u'esp6500_aa_af',u''),
                             a.get(u'esp6500_af',u''),
                             a.get(u'esp6500_ea_af',u''),
