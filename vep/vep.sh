@@ -78,11 +78,12 @@ VCFDIR=/home/rgarcia/MCAC/vcf
 
 
 #A01.JATE.vcf"
-COMPLETE_COMPLETE="B01.PTL_hlplx_nopatch_padded.recode.vcf"
-#B01.PTL_.vcf"
-#C01.JPAM.vcf
-#D01.LACA.vcf
-#E01.JIAT.vcf"
+COMPLETE_COMPLETE="
+A01.JATE_hlplx_nopatch_padded.recode.vcf
+B01.PTL_hlplx_nopatch_padded.recode.vcf
+C01.JPAM_hlplx_nopatch_padded.recode.vcf
+D01.LACA_hlplx_nopatch_padded.recode.vcf
+E01.JIAT_hlplx_nopatch_padded.recode.vcf"
 
 for VCF in $COMPLETE_COMPLETE
 do
