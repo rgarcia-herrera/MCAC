@@ -268,3 +268,12 @@ vcf_probands_wide_hlplx = [
     '/home/rgarcia/MCAC/vcf/osf_da64r_hlplx/run2/MJG_S1_vep.vcf',
     '/home/rgarcia/MCAC/vcf/osf_da64r_hlplx/run2/RRR_S1_vep.vcf',
 ]
+
+
+vcf_probands_complete_wide_hlplx = [
+    '/home/rgarcia/MCAC/vcf/complete/A01.JATE_hlplx_nopatch_padded.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/complete/B01.PTL_hlplx_nopatch_padded.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/complete/C01.JPAM_hlplx_nopatch_padded.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/complete/D01.LACA_hlplx_nopatch_padded.recode_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/complete/E01.JIAT_hlplx_nopatch_padded.recode_vep.vcf',
+]

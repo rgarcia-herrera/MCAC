@@ -2,7 +2,7 @@ import vcf
 import os
 from pprint import pprint
 
-from samples import vcf_probands_wide_hlplx as vcf_probands
+from samples import vcf_probands_complete_wide_hlplx as vcf_probands
 
 variants = {}
 samples = set()
@@ -27,29 +27,35 @@ for path in vcf_probands:
                     if chrom.find('chr') == -1:
                         chrom = 'chr' + chrom
                     
-                    if GMAF:
-                        vkey = "%s:%s_%s/%s" % (chrom,v.POS,v.REF,v.ALT)
-                        if not vkey in variants:
-                            variants[vkey] = {'symbol'  : SYMBOL,
-                                              'existing': Existing_variation,
-                                              'gmaf'    : GMAF,
-                                              'het'     : set(),
-                                              'hom'     : set(),
-                            }
+                    if not GMAF:
+                        GMAF = 'N.D.'
+                        
+                    vkey = "%s:%s_%s/%s" % (chrom,v.POS,v.REF,v.ALT)
+                    if not vkey in variants:
+                        variants[vkey] = {'symbol'  : SYMBOL,
+                                          'existing': Existing_variation,
+                                          'Protein_position' : Protein_position,
+                                          'Amino_acids' : Amino_acids,
+                                          'gmaf'    : GMAF,
+                                          'het'     : set(),
+                                          'hom'     : set(),
+                                      }
 
-                        if v.num_het == 0:
-                            variants[vkey]['hom'].add(sample)
-                        else:
-                            variants[vkey]['het'].add(sample)
+                    if v.num_het == 0:
+                        variants[vkey]['hom'].add(sample)
+                    else:
+                        variants[vkey]['het'].add(sample)
 
 samples = list(samples)
 
-print ";".join(["vkey","existing","gmaf","het","hom","het_count", "hom_count"]+samples)
+print ";".join(["vkey","existing",'Protein_position','Amino_acids',"gmaf","het","hom","het_count", "hom_count"]+samples)
 
 for v in variants:
     row = [v,
            variants[v]['existing'],
-           variants[v]['gmaf'],
+           variants[v]['Protein_position'],           
+           variants[v]['Amino_acids'],
+           variants[v]['gmaf'],           
            ",".join(variants[v]['het']),
            ",".join(variants[v]['hom']),
            str(len(variants[v]['het'])),

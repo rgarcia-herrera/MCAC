@@ -20,7 +20,7 @@ c=db['cache']
 
 ks = set()
 n=0
-with open('freqs_wide_hlplx.csv') as f:
+with open('freqs_complete_wide_hlplx.csv') as f:
     reader = csv.reader(f, delimiter=';')
     # print csv header
     print ";".join(reader.next() + [ 'symbol',
