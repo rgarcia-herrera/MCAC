@@ -37,6 +37,14 @@ for path in vcf_probands:
                                           'Protein_position' : Protein_position,
                                           'Amino_acids' : Amino_acids,
                                           'gmaf'    : GMAF,
+                                          'AFR_MAF' : AFR_MAF,
+                                          'AMR_MAF' : AMR_MAF,
+                                          'ASN_MAF' : ASN_MAF,
+                                          'EAS_MAF' : EAS_MAF,
+                                          'EUR_MAF' : EUR_MAF,
+                                          'SAS_MAF' : SAS_MAF,
+                                          'AA_MAF'  : AA_MAF,
+                                          'EA_MAF'  : EA_MAF,
                                           'het'     : set(),
                                           'hom'     : set(),
                                       }
@@ -48,14 +56,24 @@ for path in vcf_probands:
 
 samples = list(samples)
 
-print ";".join(["vkey","existing",'Protein_position','Amino_acids',"gmaf","het","hom","het_count", "hom_count"]+samples)
+print ";".join(["vkey","existing",'Protein_position','Amino_acids',
+                "gmaf",'AFR_MAF','AMR_MAF','ASN_MAF','EAS_MAF','EUR_MAF','SAS_MAF','AA_MAF','EA_MAF',
+                "het","hom","het_count", "hom_count"]+samples)
 
 for v in variants:
     row = [v,
            variants[v]['existing'],
            variants[v]['Protein_position'],           
            variants[v]['Amino_acids'],
-           variants[v]['gmaf'],           
+           variants[v]['gmaf'],
+           variants[v]['AFR_MAF'],
+           variants[v]['AMR_MAF'],
+           variants[v]['ASN_MAF'],
+           variants[v]['EAS_MAF'],
+           variants[v]['EUR_MAF'],
+           variants[v]['SAS_MAF'],
+           variants[v]['AA_MAF'],
+           variants[v]['EA_MAF'],
            ",".join(variants[v]['het']),
            ",".join(variants[v]['hom']),
            str(len(variants[v]['het'])),
