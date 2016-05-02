@@ -2,7 +2,38 @@ import vcf
 import os
 from pprint import pprint
 from haloplex_symbols import symbol
-from samples import vcf_probands_wide_hlplx as vcf_probands
+from samples import vep_complete as vcf_probands
+
+def freq_from_maf(MAF):
+    try:
+        (allele,freq) = MAF.split('&')[0].split(":")
+        return float(freq) 
+    except:
+        return 0
+
+
+
+def low_freq(GMAF,AFR_MAF,AMR_MAF,ASN_MAF,EAS_MAF,EUR_MAF,SAS_MAF,AA_MAF,EA_MAF):
+    if float(GMAF) > 0.01:
+        return False
+    elif AFR_MAF and freq_from_maf(AFR_MAF) > 0.01:
+        return False
+    elif AMR_MAF and freq_from_maf(AMR_MAF) > 0.01:
+        return False
+    elif ASN_MAF and freq_from_maf(ASN_MAF) > 0.01:
+        return False
+    elif EAS_MAF and freq_from_maf(EAS_MAF) > 0.01:
+        return False
+    elif EUR_MAF and freq_from_maf(EUR_MAF) > 0.01:
+        return False
+    elif SAS_MAF and freq_from_maf(SAS_MAF) > 0.01:
+        return False
+    elif AA_MAF and freq_from_maf(AA_MAF) > 0.01:
+        return False
+    elif EA_MAF and freq_from_maf(EA_MAF) > 0.01:
+        return False
+    else:
+        return True
 
 variants = {}
 samples = set()
@@ -29,10 +60,16 @@ for path in vcf_probands:
                     
                     if not GMAF:
                         GMAF = 'N.D.'
+                        gmaf = 0
+                    else:
+                        gmaf = freq_from_maf(GMAF)
                         
-                    vkey = "%s:%s_%s/%s" % (chrom,v.POS,v.REF,v.ALT)
-                    if not vkey in variants:
-                        variants[vkey] = {'symbol'  : SYMBOL,
+                    if low_freq(gmaf,AFR_MAF,AMR_MAF,ASN_MAF,EAS_MAF,EUR_MAF,SAS_MAF,AA_MAF,EA_MAF) \
+                       and PolyPhen.startswith('p') \
+                       and SIFT.startswith('d'):
+                        vkey = "%s:%s_%s/%s" % (chrom,v.POS,v.REF,v.ALT)
+                        if not vkey in variants:
+                            variants[vkey] = {'symbol'  : SYMBOL,
                                           'existing': Existing_variation,
                                           'Protein_position' : Protein_position,
                                           'Amino_acids' : Amino_acids,
@@ -85,10 +122,10 @@ for path in vcf_probands:
                                           'MOTIF_SCORE_CHANGE': MOTIF_SCORE_CHANGE
                                       }
 
-                    if v.num_het == 0:
-                        variants[vkey]['hom'].add(sample)
-                    else:
-                        variants[vkey]['het'].add(sample)
+                        if v.num_het == 0:
+                            variants[vkey]['hom'].add(sample)
+                        else:
+                            variants[vkey]['het'].add(sample)
 
 samples = list(samples)
 
@@ -103,6 +140,7 @@ print ";".join(["vkey","existing",'Protein_position','Amino_acids',
                 "het","hom","het_count", "hom_count"]+samples)
 
 for v in variants:
+    
     row = [v,
            variants[v]['existing'],
            variants[v]['Protein_position'],           

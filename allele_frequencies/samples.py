@@ -277,3 +277,12 @@ vcf_probands_complete_wide_hlplx = [
     '/home/rgarcia/MCAC/vcf/complete/D01.LACA_hlplx_nopatch_padded.recode_vep.vcf',
     '/home/rgarcia/MCAC/vcf/complete/E01.JIAT_hlplx_nopatch_padded.recode_vep.vcf',
 ]
+
+
+vep_complete = [
+    '/home/rgarcia/MCAC/vcf/complete/E01.JIAT_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/complete/D01.LACA_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/complete/B01.PTL_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/complete/A01.JATE_vep.vcf',
+    '/home/rgarcia/MCAC/vcf/complete/C01.JPAM_vep.vcf',
+]
